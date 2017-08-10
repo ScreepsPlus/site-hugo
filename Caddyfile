@@ -6,6 +6,6 @@ git {
 	branch beta
 	interval 3600
 	path /webhook
-	secret {$WEBHOOK_SECRET}
+	secret abc123
 	then hugo --destination=/var/www/public
 }
