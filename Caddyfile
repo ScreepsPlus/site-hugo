@@ -5,7 +5,6 @@ git {
 	path /var/www/
 	branch beta
 	interval 3600
-	path /webhook
-	secret abc123
+	hook /webhook abc123
 	then hugo --destination=/var/www/public
 }
