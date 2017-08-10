@@ -1,0 +1,11 @@
+:2015
+root /var/www/public
+git {
+	repo https://github.com/screepsplus/site-hugo.git
+	path /var/www/
+	branch beta
+	interval 3600
+	path /webhook
+	secret {$WEBHOOK_SECRET}
+	then hugo --destination=/var/www/public
+}

@@ -1,0 +1,42 @@
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "ScreepsPlus"
+theme: "blackburn"
+
+canonifyurls: true
+paginate: 10
+enableEmoji: true
+
+indexes:
+  tag: "tags"
+  topic: "topics"
+
+params:
+  subtitle: "Improving Screeps one graph at a time"
+  brand: "ScreepsPlus"
+  custom_css: ["css/my.css"]
+  # custom_js: ["js/my.js"]
+
+menu:
+  main:
+  - name: "Home"
+    pre: "<i class='fa fa-home fa-fw'></i>"
+    weight: 1
+    identifier: "home"
+    url: "/"
+  - name: "Posts"
+    pre: "<i class='fa fa-list fa-fw'></i>"
+    weight: 2
+    identifier: "post"
+    url: "/post/"
+  - name: "Wiki"
+    pre: "<i class='fa fa-book fa-fw'></i>"
+    weight: 4
+    identifier: "wiki"
+    url: "https://wiki.screepspl.us"
+
+social:
+  twitter: "ags131"
+  github: "ScreepsPlus"
+  patreon: "ags131"
+  slack: "C2FD5CGJV"
