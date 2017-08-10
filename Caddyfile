@@ -1,10 +1,10 @@
 :2015
-root /var/www/public
+root /srv
 git {
 	repo https://github.com/screepsplus/site-hugo.git
-	path /var/www/
+	path /tmp
 	branch beta
 	interval 3600
 	hook /webhook abc123
-	then hugo --destination=/var/www/public
+	then hugo --destination=/srv
 }
