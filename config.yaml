@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "ScreepsPlus"
 theme: "blackburn"
 
+baseURL: https://beta.screepspl.us
+
 canonifyurls: true
 paginate: 10
 enableEmoji: true
