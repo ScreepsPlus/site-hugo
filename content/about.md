@@ -9,8 +9,6 @@ menu:
     weight: 100
 ---
 
-# About
-
 Some long rant about ScreepsPlus...
 
 
