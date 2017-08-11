@@ -25,6 +25,7 @@ html, body {
 	grid-template-rows: 64px auto 256px;
 	grid-template-columns: 210px auto;
 	height: 100%;
+	background-color: hsl(0,0%,10%);
 }
 
 @media(max-width: 1024px){
@@ -36,7 +37,6 @@ html, body {
 			"social";
 		grid-template-rows: 64px auto auto auto;
 		grid-template-columns: auto;
-		background-color: hsl(0,0%,20%);
 	}
 	.content {
 		overflow: inherit;
@@ -52,7 +52,6 @@ header {
 
 .brand {
 	grid-area: brand;
-	background-color: hsl(0,0%,20%);
 	color: hsl(0,0%,80%);
 	text-align: center;
 	padding: 8px;
@@ -60,12 +59,10 @@ header {
 
 #menu {
 	grid-area: menu;
-	background-color: hsl(0,0%,20%);
 	color: hsl(0,0%,80%);
 }
 .social {
 	grid-area: social;
-	background-color: hsl(0,0%,20%);
 	color: hsl(0,0%,80%);
 	display: flex;
 	align-items: flex-end;
