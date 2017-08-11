@@ -30,12 +30,12 @@ html, body {
 @media(max-width: 1024px){
 	#layout {
 		grid-template-areas: 
-			"brand brand brand" 
-			". menu ." 
-			"content content content" 
-			". social .";
+			"brand" 
+			"menu" 
+			"content" 
+			"social";
 		grid-template-rows: 64px auto auto auto;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: auto;
 		background-color: hsl(0,0%,20%);
 	}
 	.content {
