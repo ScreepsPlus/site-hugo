@@ -17,6 +17,10 @@ html, body {
 
 }
 
+.brand img {
+	height: 64px;
+}
+
 #layout {
 	display:  grid;
 	grid-template-areas: "brand content"
@@ -54,7 +58,7 @@ header {
 	grid-area: brand;
 	color: hsl(0,0%,80%);
 	text-align: center;
-	padding: 8px;
+	padding: 0 8px;
 }
 
 #menu {

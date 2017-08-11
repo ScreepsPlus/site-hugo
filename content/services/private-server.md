@@ -17,8 +17,8 @@ Port: 21025
 
 ### Mods
 
-* screepsmod-mongo
-* screepsmod-auth
+* [screepsmod-mongo](https://github.com/screepsmod-mongo)
+* [screepsmod-auth](https://github.com/screepsmod-auth)
 * Email notifications 
 * Tick rate setting (Currently 1.1s/tick)
 * Power Banks
