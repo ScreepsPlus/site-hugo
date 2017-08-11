@@ -26,7 +26,7 @@ html, body {
 	grid-template-areas: "brand content"
 						 "menu content"
 						 "social content";
-	grid-template-rows: 64px auto 256px;
+	grid-template-rows: 72px auto 256px;
 	grid-template-columns: 210px auto;
 	height: 100%;
 	background-color: hsl(0,0%,10%);
@@ -39,7 +39,7 @@ html, body {
 			"menu" 
 			"content" 
 			"social";
-		grid-template-rows: 64px auto auto auto;
+		grid-template-rows: 72px auto auto auto;
 		grid-template-columns: auto;
 	}
 	.content {
