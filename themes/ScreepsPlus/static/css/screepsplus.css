@@ -14,6 +14,7 @@ html, body {
 	html, body {
 		height: 100%;
 	}
+
 }
 
 #layout {
@@ -29,15 +30,19 @@ html, body {
 @media(max-width: 1024px){
 	#layout {
 		grid-template-areas: 
-			"brand"
-			"menu"
-			"content"
-			"social";
+			"brand brand brand" 
+			". menu ." 
+			"content content content" 
+			". social .";
 		grid-template-rows: 64px auto auto auto;
-		grid-template-columns: auto;
+		grid-template-columns: auto auto auto;
+		background-color: hsl(0,0%,20%);
 	}
 	.content {
 		overflow: inherit;
+	}
+	.menu-item {
+		text-align: center;
 	}
 }
 
