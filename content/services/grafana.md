@@ -7,9 +7,9 @@ menu:
     pre: "<i class='fa fa-line-chart fa-fw'></i>"
     identifier: grafana
     weight: 10
+    parent: services
 ---
 
-# Grafana
 ## Hosted Graphs
 
 ![Graph Image](/images/graphs.png)
@@ -23,5 +23,5 @@ screeps.com and downloads your stats, it then sends those stats here for the gra
 ![Agent Diagram](/images/Diagram1.png)
 
 
-Want your own graphs?
-ma
+Want your own graphs?  
+TODO: Readd buttons/links here

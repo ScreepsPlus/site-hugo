@@ -1,0 +1,111 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: Roboto;
+	font-size: 14pt;
+	color: hsl(0,0%,10%);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#layout {
+	display:  grid;
+	grid-template-areas: "brand content"
+						 "menu content"
+						 "social content";
+	grid-template-rows: 64px auto 256px;
+	grid-template-columns: 256px auto;
+	height: 100%;
+}
+
+header {
+	grid-area: header;
+}
+
+.brand {
+	grid-area: brand;
+	background-color: hsl(0,0%,20%);
+	color: hsl(0,0%,80%);
+	text-align: center;
+	padding: 8px;
+}
+
+#menu {
+	grid-area: menu;
+	background-color: hsl(0,0%,20%);
+	color: hsl(0,0%,80%);
+}
+.social {
+	grid-area: social;
+	background-color: hsl(0,0%,20%);
+	color: hsl(0,0%,80%);
+}
+
+footer {
+	grid-area: footer;
+	background-color: yellow;
+}
+
+.content {
+	grid-area: content;
+	background-color: hsl(0,0%,90%);
+	padding: 16px;
+	overflow: auto;
+}
+
+.brand {
+	font-size: 24pt;
+}
+
+.brand a, 
+#menu a,
+.social a {
+	text-decoration: none;
+	color: hsl(0,0%,80%);
+}
+
+/* .brand a:hover, 
+#menu a:hover {
+	color: hsl(0,0%,95%);
+
+}
+ */
+.menu-list, .menu-children {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-item {
+	font-size: 16pt;
+	padding: 8px 0;
+}
+
+.menu-item:not(.menu-has-children):hover {
+	background-color: hsl(0,0%,30%);
+}
+
+.menu-item .fa {
+	margin-right: 4px;
+	margin-left: 8px;
+}
+
+.menu-children .menu-item .fa {
+	margin-left: 32px;
+}
+
+
+article {
+	padding: 16px;
+	/* border: 1px solid hsl(0,0%,80%); */
+}
+
+article header a {
+	text-decoration: none;
+	color: hsl(0, 0%, 20%);
+	font-size: 24pt;
+	font-weight: bold;
+}
