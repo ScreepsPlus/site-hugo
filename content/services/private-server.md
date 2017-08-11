@@ -7,7 +7,6 @@ menu:
     pre: "<i class='fa fa-server fa-fw'></i>"
     identifier: private-server
     weight: 10
-    parent: services
 ---
 
 ### Connection

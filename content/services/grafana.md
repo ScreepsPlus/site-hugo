@@ -7,7 +7,6 @@ menu:
     pre: "<i class='fa fa-line-chart fa-fw'></i>"
     identifier: grafana
     weight: 10
-    parent: services
 ---
 
 ## Hosted Graphs
