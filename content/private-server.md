@@ -16,14 +16,12 @@ menu:
 Host: server1.screepspl.us  
 Port: 21025
 
-
 ### Mods
 
 * screepsmod-mongo
 * screepsmod-auth
 * Email notifications 
-* Tick rate setting (Currently 1.1s/tick)
-* Power Banks
-* History (Not reliable yet)
+* Tick rate setting (Currently 1.2s/tick)
+* History
+* GCL/CPU Scaling!
 * Other minor tweaks, bug fixes, and tools
-
