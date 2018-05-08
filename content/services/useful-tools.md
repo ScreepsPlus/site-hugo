@@ -11,7 +11,7 @@ menu:
 
 #### Web Tools
 
-[Arcath](https://screeps.com/a/#!/profile/arcath) has some useful tools including a building planner, creep esigner, console viewer, and memory viewer.
+[Arcath](https://screeps.com/a/#!/profile/arcath) has some useful tools including a building planner, creep designer, console viewer, and memory viewer.
 Check it out at [screeps.arcath.net](https://screeps.arcath.net)
 
 [The League of Automated Nations](http://leagueofautomatednations.com) is a site to track alliances and their rankings
