@@ -21,11 +21,13 @@ textarea {
 	margin: 1px;
 }
 
-div.controls, div.stats { display: inline-block; padding: 10px; }
+div.controls, div.stats { display: inline-block; padding: 10px;
+	vertical-align: top;
+}
 
 table.stats {
 	border-collapse: collapse;
-	width: calc(100% - 4px);
+	width: 34em;
 	border: 1px solid #888;
 	padding: 1px;
 	margin: 1px;
@@ -35,16 +37,30 @@ table.stats td {
 	padding: 4px;
 }
 
-table.stats tr td:nth-child(2), td:nth-child(3), td:nth-child(4) {
-	text-align: center;
-}
-
-span.tip {
-	color: grey;
+table.stats tr td:first-child {
+	min-width: 10em;
+	text-align: left;
 }
 
 .left {
 	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center !important;
+}
+
+table.stats tr td:nth-child(1n+2) {
+	min-width: 6em;
+	text-align: right;
+}
+
+span.tip {
+	color: grey;
 }
 
 .fr {
@@ -56,6 +72,11 @@ span.tip {
 	vertical-align: top;
 }
 
+h1 {
+	font-size: 28px;
+	margin: 2px;
+	padding: 1px;
+}
 
 button, select, input {
 	border: 1px solid #ccc;
@@ -67,4 +88,8 @@ button, select, input {
 
 button:focus, select:focus, input:focus {
 	border: 1px solid #000;
+}
+
+input.count {
+	width: 4em;
 }
