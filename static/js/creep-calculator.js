@@ -17,7 +17,7 @@ app.controller('parts', function ($scope) {
   }
   $scope.parts = [
     {type: 'TOUGH', price: 10, count: 0, mul: -1},
-    {type: 'MOVE', price: 50, count: 1, mul: -1, min: 1},
+    {type: 'MOVE', price: 50, count: 1, mul: -1},
     {type: 'WORK', price: 100, count: 0, mul: -1},
     {type: 'CARRY', price: 50, count: 0, mul: -1},
     {type: 'ATTACK', price: 80, count: 0, mul: -1},
@@ -38,14 +38,17 @@ app.controller('parts', function ($scope) {
     }
     return s
   }
-  $scope.getSum = function () {
-    var s = 0
-    for (var t of $scope.parts) {
-      if (t.mul < 0) {
-        s += t.count * t.price
+  $scope.getSum = function(includeBoostingCost){
+    var s = 0;
+    for(var t of $scope.parts){
+      if(t.mul<0) {
+        s += t.count * t.price;
+        if(includeBoostingCost && (t.boost != undefined) && (t.boost != '-')) {
+          s += 20*t.count;
+        }
       }
     }
-    return s
+    return s;
   }
   $scope.getPartsCount = function () {
     var c = 0
@@ -105,12 +108,18 @@ app.controller('parts', function ($scope) {
     ],
     'WORK': [
       { text: '-' },
+      { text: 'ZH' },
+      { text: 'ZH2O' },
+      { text: 'XZH2O' },
+      { text: 'LH' },
+      { text: 'LH2O' },
+      { text: 'XLH2O' },
       { text: 'GH' },
       { text: 'GH2O' },
       { text: 'XGH2O' },
-      { text: 'LH' },
-      { text: 'GL2O' },
-      { text: 'XLH2O' }
+      { text: 'UO' },
+      { text: 'UHO2' },
+      { text: 'XUHO2' },
     ],
     'CARRY': [
       { text: '-' },
@@ -137,6 +146,58 @@ app.controller('parts', function ($scope) {
       { text: 'XLHO2' }
     ]
   }
+  $scope.bmul = {
+    'harvest': {
+      'UO': 3,
+      'UHO2': 5,
+      'XUHO2': 7
+    },
+    'upgrade': {
+      'GH': 1.5,
+      'GH2O': 1.8,
+      'XGH2O': 2
+    },
+    'build': {
+      'LH': 1.5,
+      'LH2O': 1.8,
+      'XLH2O': 2
+    },
+    'dismantle': {
+      'ZH': 2,
+      'ZH2O': 3,
+      'XZH2O': 4
+    },
+    'attack': {
+      'UH': 2,
+      'UH2O': 3,
+      'XUH2O': 4
+    },
+    'rangedAttack': {
+      'KO': 2,
+      'KHO2': 3,
+      'XKHO2': 4
+    },
+    'heal': {
+      'LO': 2,
+      'LHO2': 3,
+      'XLHO2': 4
+    },
+    'carry': {
+      'KH': 2,
+      'KH2O': 3,
+      'XKH2O': 4
+    },
+    'move': {
+      'ZO': 2,
+      'ZHO2': 3,
+      'XZHO2': 4
+    },
+    'armor': {
+      'GO': 30,
+      'GHO2': 50,
+      'XGHO2': 70
+    }
+  }
   $scope.controllerLevels = [
     {spawns: 0, extensions: 0, extensionCapacity: 0, text: 'no (='},
     {spawns: 1, extensions: 0, extensionCapacity: 50, text: '1'},
@@ -148,7 +209,7 @@ app.controller('parts', function ($scope) {
     {spawns: 2, extensions: 50, extensionCapacity: 100, text: '7'},
     {spawns: 3, extensions: 60, extensionCapacity: 200, text: '8'}
   ]
-  $scope.controllerLevel = $scope.controllerLevels['1']
+  $scope.controllerLevel = $scope.controllerLevels['8']
   $scope.$watch('controllerLevel', function (val) {
     if (!val) {
       return
@@ -169,25 +230,40 @@ app.controller('parts', function ($scope) {
       W = creep weight (Number of body parts, excluding MOVE and empty CARRY parts)
       M = number of MOVE parts
   */
-  $scope.getWait = function (k, full) {
-    var W = $scope.getPartsCount() - +assoc['MOVE'].count - (full ? 0 : +assoc['CARRY'].count)
-    var M = +assoc['MOVE'].count
-    var speed = Math.ceil(k * W / M)
-    return Math.max(1, speed)
+  $scope.getWait = function(k, full) {
+    var W = $scope.getPartsCount() - +assoc['MOVE'].count - (full ? 0 : +assoc['CARRY'].count);
+    var M = +assoc['MOVE'].count * ($scope.bmul['move'][assoc['MOVE'].boost] || 1);
+    var speed = Math.ceil(k * W / M);
+    return Math.max(1, speed);
+  }
+
+  $scope.getHits = function(toughOnly) {
+    var armor = assoc['TOUGH'];
+    var armorHits = armor.count * 100 * 100 / (100 - ($scope.bmul['armor'][armor.boost] || 0));
+    if (toughOnly) {
+      return armorHits;
+    } else {
+      var unarmoredHp = 100 * ($scope.getPartsCount() - assoc['TOUGH'].count);
+      return unarmoredHp + armorHits;
+    }
   }
 })
 
-.filter('num', function () {
-  return function (n, w) {
-    if (w === undefined) {
-      w = 3
-    }
-    if (n < 1000) {
-      return n.toFixed(w)
-    } else if (n < 1000000) {
-      return (n / 1000).toFixed(w) + 'K'
-    } else {
-      return (n / 1000000).toFixed(w) + 'M'
-    }
-  }
-})
+  .filter('num', function(){
+    return function(n, w){
+      if(n==0) {
+        return '';
+      }
+      if(w === undefined)
+        w = 3;
+      if(w == 0) {
+        return n;
+      }
+      if(n<1000)
+        return n.toPrecision(w);
+      else if(n<1000000)
+        return (n/1000).toPrecision(w)+'K';
+      else
+        return (n/1000000).toPrecision(w)+'M';
+    };
+  })
