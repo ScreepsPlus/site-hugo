@@ -122,7 +122,7 @@ menu:
         <td>{{ units*getSum(true)*60*60/(1500*tick) | num }}<span class="tip">/H</span></td>
         <td>{{ units*getSum(true)*60*60*24/(1500*tick) | num }}<span class="tip">/D</span></td>
       </tr>
-      <tr ng-repeat='i in parts' ng-if="i.boost != undefined && i.boost != '-' && i.count > 0">
+      <tr ng-repeat="i in parts" ng-if="i.boost != undefined &amp;&amp; i.boost != '-' &amp;&amp; i.count > 0">
         <td>{{ assoc[i.type].boost }}</td>
         <td>{{ 30*i.count | num}}<span class="tip">/1</span></td>
         <td><span ng-if="units > 1">{{ 30*i.count*units | num }}<span class="tip">/{{ units }}</span></span></td>
