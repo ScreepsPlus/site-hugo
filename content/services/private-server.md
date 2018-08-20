@@ -20,6 +20,14 @@ Port: 21025
 * [screepsmod-auth](https://github.com/screepsmod-auth)
 * Email notifications 
 * Tick rate setting (Currently set to 1.2s/tick)
-* GCL/CPU Scaling!
+* GCL/CPU Scaling! (20 + 10 per GCL, 120 CPU cap)
 * Power Banks
+* Adjusted Market supply, many more NPC orders to compensate for a less active market
 * Other minor tweaks, bug fixes, and tools
+
+### API Access
+
+The API can be accessed just like on official.
+Ports: 21025, 80, 443 (HTTPS)
+
+You will need to [set your password](https://server1.screepspl.us/authmod/password/) in order to login.
