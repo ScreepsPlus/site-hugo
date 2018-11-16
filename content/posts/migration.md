@@ -1,12 +1,7 @@
 ---
 title: "Migration"
 date: 2018-11-16T09:07:23-06:00
-draft: true
-menu:
-  main:
-    pre: "<i class='fa fa-info fa-fw'></i>"
-    identifier: migration
-    weight: 10
+draft: false
 ---
 
 I'm currently working on migrating the service to a new server cluster, in the
