@@ -4,7 +4,7 @@ title: "ScreepsPlus"
 # theme: "blackburn"
 theme: ScreepsPlus
 
-baseURL: https://do.screepspl.us/
+baseURL: https://screepspl.us/
 
 canonifyurls: true
 paginate: 10
