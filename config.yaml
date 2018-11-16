@@ -1,7 +1,10 @@
 baseURL: "http://example.org/"
 languageCode: "en-us"
 title: "ScreepsPlus"
-theme: "blackburn"
+# theme: "blackburn"
+theme: ScreepsPlus
+
+baseURL: https://do.screepspl.us/
 
 canonifyurls: true
 paginate: 10
@@ -12,7 +15,7 @@ indexes:
   topic: "topics"
 
 params:
-  subtitle: "Improving Screeps one graph at a time"
+  subtitle: ""
   brand: "ScreepsPlus"
   custom_css: ["css/my.css"]
   # custom_js: ["js/my.js"]
@@ -24,16 +27,17 @@ menu:
     weight: 1
     identifier: "home"
     url: "/"
-  - name: "Posts"
-    pre: "<i class='fa fa-list fa-fw'></i>"
-    weight: 2
-    identifier: "post"
-    url: "/post/"
+  - name: "Forum"
+    pre: "<i class='fa fa-chat fa-fw'></i>"
+    weight: 80
+    identifier: "forum"
+    url: "https://screeps.com/forum/category/25/screepsplus"
   - name: "Wiki"
     pre: "<i class='fa fa-book fa-fw'></i>"
-    weight: 4
+    weight: 90
     identifier: "wiki"
     url: "https://wiki.screepspl.us"
+
 
 social:
   twitter: "ags131"

@@ -1,0 +1,161 @@
+---
+title: "Creep Calculator"
+date: 2017-08-11T08:02:15-05:00
+draft: false
+menu:
+  main:
+    pre: "<i class='fa fa-calculator fa-fw'></i>"
+    identifier: creep-calculator
+    weight: 10
+---
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/creep-calculator.js"></script>
+<link rel="stylesheet" href="/css/creep-calculator.css">
+<div class="content top" ng-app="calc" ng-controller="parts">
+  <div class="controls">
+    <table>
+      <tr>
+        <th>part/struct</th>
+        <th>price</th>
+        <th></th>
+        <th></th>
+        <th>count </th>
+        <th> </th>
+        <th>boost</th>
+        <th>sum</th>
+      </tr>
+      <tr ng-repeat="i in parts" ng-class="{have: i.count &amp;&amp; i.mul&lt;0, source: i.count &amp;&amp; i.mul&gt;0, error: i.count&lt;i.min}">
+        <td>{{ i.type }}</td>
+        <td>{{ i.price }}</td>
+        <td>
+          <button tabindex="-1" ng-click="i.count = i.min">min</button>
+          <button tabindex="-1" ng-click="subtract(i.type)">-</button>
+        </td>
+        <td>
+          <input type="number" ng-model="i.count" size="5">
+        </td>
+        <td>
+          <button tabindex="-1" ng-click="add(i.type)">+</button>
+          <button tabindex="-1" ng-if="i.type!=='spawn'" ng-click="add(i.type, 10)">+10</button>
+        </td>
+        <td><select class="count" ng-if="boosts[i.type]" ng-model="i.boost" ng-init="boost[i.type]='-'" 
+                     ng-options="b.text as b.text for b in boosts[i.type]"></select></td>
+        <td>{{ i.count * i.price * i.mul }}</td>
+      </tr>
+      <tr>
+        <th class="left"><span>units*</span></th>
+        <th><input class="count" type="number" ng-model="units" ng-init="units=1"></th>
+        <th>parts</th>
+        <th ng-class="{error: getPartsCount()&gt;50}">{{ getPartsCount() | num:0 }}<span title="all parts">({{ getPartsCount()*units | num:0 }})</span></th>
+        <th></th>
+        <th>sum</th>
+        <th>{{ getSum()*units | num }}</th>
+      </tr>
+      <tr>
+        <th class="left">
+          <label for="controllerLevelId">controller: </label>
+        </th>
+        <th>
+          <select id="controllerLevelId" ng-model="controllerLevel" ng-options="l as l.text for l in controllerLevels"></select>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th title="number of units keeps builded from one source">per source</th>
+        <th>{{ (1500/300*3000 / getSum() / units) | num }}</th>
+      </tr>
+      <tr>
+        <th class="left"><label for="tickId">tick duration (sec)</label></th>
+        <th><input class="count ng-pristine ng-valid ng-touched" id="tickId" type="number" size="1" step="0.1" ng-model="tick" ng-init="tick=3"></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>balance</th>
+        <th ng-class="{error: getBalance()&lt;0}">{{ getBalance() | num }}</th>
+      </tr>
+    </table>
+    <div>
+      <div class="fr">
+        <button ng-click="parseInput()">parse</button>
+        <button ng-click="reset()">reset</button>
+      </div>
+      <div>
+        <label for="inputTextId">field to parse body array</label>
+        <textarea id="inputTextId" ng-model="inputText" rows="2"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="stats" ng-if="getPartsCount()>0">
+    <table class="stats" border="1">
+      <tr>
+        <td>Health:</td>
+        <td colspan="4">
+          <span>{{ getHits(false)*units | num }}</span> 
+          <span ng-if="assoc['TOUGH'].count>0">(by TOUGH {{getHits(true)*units  | num }})</span></td>
+      </tr>
+      <tr ng-repeat="stat in [{id: 'dismantle', name: 'Dismantle structures', part: 'WORK', mul: 50},{id: 'harvest', name: 'Harvest energy', part: 'WORK', mul: 2},{id: 'upgrade', name: 'Upgrade controller', part: 'WORK', mul: 1},{id: 'build', name: 'Build', part: 'WORK', mul: 5},{id: 'build', name: 'Fortify', part: 'WORK', mul: 100},{id: 'attack', name: 'Attack', part: 'ATTACK', mul: 30},{id: 'rangedAttack', name: 'Ranged attack', part: 'RANGED_ATTACK', mul: 10},{id: 'rangedAttack', name: 'Mass attack 1', part: 'RANGED_ATTACK', mul: 10},{id: 'rangedAttack', name: 'Mass attack 2', part: 'RANGED_ATTACK', mul: 4},{id: 'rangedAttack', name: 'Mass attack 3', part: 'RANGED_ATTACK', mul: 1},{id: 'heal', name: 'Heal', part: 'HEAL', mul: 12},{id: 'heal', name: 'Ranged heal', part: 'HEAL', mul: 4},]" ng-if="assoc[stat.part].count > 0">
+        <td>{{ ::stat.name }}</td>
+        <td>{{ assoc[stat.part].count*stat.mul*(bmul[stat.id][assoc[stat.part].boost]||1)*units | num }}<span class="tip" ng-if="assoc[stat.part].count">/T</span></td>
+        <td>{{ assoc[stat.part].count*stat.mul*(bmul[stat.id][assoc[stat.part].boost]||1)*1500*units | num }}<span class="tip">/life</span></td>
+        <td>{{ assoc[stat.part].count*stat.mul*(bmul[stat.id][assoc[stat.part].boost]||1)*60*60*units/tick | num }}<span class="tip">/H</span></td>
+        <td>{{ assoc[stat.part].count*stat.mul*(bmul[stat.id][assoc[stat.part].boost]||1)*60*60*24*units/tick | num }}<span class="tip">/D</span></td>
+      </tr>
+      <tr ng-if="assoc['CARRY'].count>0">
+        <td>Carry</td>
+        <td>{{ assoc['CARRY'].count*50*(bmul['carry'][assoc['CARRY'].boost]||1) |num }}<span class="tip">/1</span></td>
+        <td><span ng-if="units > 1">{{ assoc['CARRY'].count*50*(bmul['carry'][assoc['CARRY'].boost]||1)*units |num }}<span class="tip">/{{ units }}</span></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr ng-if="assoc['MOVE'].count>0">
+        <td>
+          <span>Walk&nbsp;time</span>
+          <span ng-if="assoc['CARRY'].count>0" class="ng-scope">(empty,&nbsp;full)</span>
+        </td>
+        <td class="center" colspan="4"><span  ng-repeat="place in [						{name: 'plain', k:1},						{name: 'road', k:0.5},						{name: 'swamp', k:5},					]">{{ place.name }}=<span>{{ getWait(place.k, false) }}</span><span ng-if="assoc['CARRY'].count>0">,{{ getWait(place.k, true) }}</span>&nbsp;&nbsp; </span></td>
+      </tr>
+      <tr>
+        <td>Energy</td>
+        <td>{{ getSum(true) | num }}<span class="tip">/1</span></td>
+        <td><span ng-if="units > 1">{{ units*getSum(true) | num }}<span class="tip">/{{ units }}</span></span></td>
+        <td>{{ units*getSum(true)*60*60/(1500*tick) | num }}<span class="tip">/H</span></td>
+        <td>{{ units*getSum(true)*60*60*24/(1500*tick) | num }}<span class="tip">/D</span></td>
+      </tr>
+      <tr ng-repeat="i in parts" ng-if="i.boost != undefined &amp;&amp; i.boost != '-' &amp;&amp; i.count > 0">
+        <td>{{ assoc[i.type].boost }}</td>
+        <td>{{ 30*i.count | num}}<span class="tip">/1</span></td>
+        <td><span ng-if="units > 1">{{ 30*i.count*units | num }}<span class="tip">/{{ units }}</span></span></td>
+        <td>{{ 30*i.count*units*60*60/(1500*tick) | num}}<span class="tip">/H</span></td>
+        <td>{{ 30*i.count*units*60*60*24/(1500*tick) | num}}<span class="tip">/D</span></td>
+      </tr>
+    </table>
+    <div>
+      <textarea rows="2" onmouseup="this.select()" ng-value="getParts()"></textarea><br>
+      <div>
+        <textarea rows="1" onmouseup="this.select()" ng-value="getParts(true)"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div>links
+  <ul>
+    <li><a href="http://jsonviewer.stack.hu/">good online JSON viewer</a></li>
+  </ul>
+</div>
+<div>changes
+  <ul>
+    <li>2018-05-08 made it less noisy</li>
+    <li>2018-05-08 added boosts support</li>
+    <li>2018-05-08 added ability to specify tick rate for correct by-hour and by-day calculations</li>
+    <li>2017-06-16 Published on ScreepsPl.us</li>
+    <li>2017-04-28 fixed extensions capacity for rcl7/8</li>
+    <li>2015-08-26 fixed harvest amount</li>
+    <li>2015-10-08 max parts warning set to 50</li>
+    <li>2015-10-14 fixed attack,heal values; added units multiplier; captions shinked;</li>
+  </ul>
+</div>
+<div>
+  This is copied from <a href="https://screeps.com/a/#!/profile/o4kapuk">o4kapuk's</a> <a 
+href="https://codepen.io/o4kapuk/pen/ZKeorE">codepen</a> which is a fork of <a href="https://codepen.io/findoff/pen/RPmqOd">findoff's original version</a>
+</div>

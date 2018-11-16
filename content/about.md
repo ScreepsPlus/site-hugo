@@ -9,10 +9,6 @@ menu:
     weight: 100
 ---
 
-# About
-
 Some long rant about ScreepsPlus...
 
-Want to help support this service?  
-[![Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/ags131)
 
