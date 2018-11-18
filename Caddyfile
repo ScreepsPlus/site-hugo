@@ -3,7 +3,7 @@ root /srv
 git {
 	repo https://github.com/screepsplus/site-hugo.git
 	path /tmp
-	branch beta
+	branch master
 	interval 3600
 	hook /webhook abc123
 	then hugo --destination=/srv

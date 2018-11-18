@@ -1,4 +1,3 @@
-baseURL: "http://example.org/"
 languageCode: "en-us"
 title: "ScreepsPlus"
 # theme: "blackburn"
@@ -18,6 +17,7 @@ params:
   subtitle: ""
   brand: "ScreepsPlus"
   custom_css: ["css/my.css"]
+  description: "ScreepsPlus Graphs and Servers"
   # custom_js: ["js/my.js"]
 
 menu:
