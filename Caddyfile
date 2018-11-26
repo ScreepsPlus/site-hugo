@@ -1,5 +1,16 @@
 :2015
 root /srv
+# expires {
+#   match .css|.js$ 1d
+#   match .woff2|.png$ 1w
+# }
+header (.css|.js)$ {
+  Cache-Control "public, max-age=86400"
+}
+header (.woff2|.png)$ {
+  Cache-Control "public, max-age=604800"
+}
+
 git {
 	repo https://github.com/screepsplus/site-hugo.git
 	path /tmp
