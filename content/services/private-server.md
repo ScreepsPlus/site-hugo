@@ -6,7 +6,7 @@ menu:
   main:
     pre: "<i class='fa fa-server fa-fw'></i>"
     identifier: private-server
-    weight: 10
+    weight: 5
 ---
 
 ### Connection
@@ -30,4 +30,4 @@ Port: 21025
 The API can be accessed just like on official.
 Ports: 21025, 80, 443 (HTTPS)
 
-You will need to [set your password](https://server1.screepspl.us/authmod/password/) in order to login.
+You will need to [set your password](https://server1.screepspl.us/authmod/password/) in order to login to the API.

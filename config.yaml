@@ -28,7 +28,7 @@ menu:
     identifier: "home"
     url: "/"
   - name: "Forum"
-    pre: "<i class='fa fa-chat fa-fw'></i>"
+    pre: "<i class='fa fa-comments fa-fw'></i>"
     weight: 80
     identifier: "forum"
     url: "https://screeps.com/forum/category/25/screepsplus"
