@@ -1,0 +1,74 @@
+---
+title: "Badge Generator"
+date: 2018-11-26T10:08:29-06:00
+menu:
+  main:
+    pre: "<i class='fa fa-user-circle fa-fw'></i>"
+    identifier: badge
+    weight: 10
+---
+<script src="/js/canvas.js"></script>
+<script src="/js/badge.js"></script>
+<style>
+  #badgeImg {
+  	max-width: 90%;
+  	border: 0;
+  }
+</style>
+<h3>Badge Generator</h3>
+<form id="badgeFrm">
+  <div class="form-group">
+  	<label>Username</label>
+  	<input class="form-control" name="user" placeholder="" />
+  </div>
+  <div class="form-group">
+  	<label>Width</label>
+  	<input class="form-control" name="width" type="number" value=100 />
+  </div>
+  <div class="form-group">
+  	<label>Background Color</label>
+  	<input class="form-control" name="bgcolor" type="color" value='#FFFFFF' />
+  </div>
+  <div class="form-group">
+  	<label>Transparent Background</label>
+  	<input class="form-control" name="trans" type="checkbox" checked />
+  </div>
+  <a class="btn btn-info" href="#" onclick="return genBadge()">Generate</a>
+  <a id="badgeLink" class="btn btn-info" href="#" onclick="return genBadge(true)">Download</a>
+  <div class="preview">
+  	<img id="badgeImg" />
+  </div>
+</form>
+ 	<script>
+		let badges = {}
+		function getBadge(user){
+		 	if(badges[user]) return Promise.resolve(badges[user])
+		 	// const url = `https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%27https%3A%2F%2Fscreeps.com%2Fapi%2Fuser%2Ffind%3Fusername%3D${user}%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`
+		 	const url = `https://cors-anywhere.herokuapp.com/https://screeps.com/api/user/find?username=${user}`
+			return fetch(url)
+			  .then(d=>d.json())
+			  .then(b=>badges[user]=b.user.badge)
+			  // .then(b=>badges[user]=b.query.results.json.user.badge)
+		}
+		function genBadge(download){
+			if(badgeImg.src && download) return true
+			let user = badgeFrm.user.value
+			let width = badgeFrm.width.value
+			let bgcolor = badgeFrm.bgcolor.value
+			let trans = badgeFrm.trans.checked
+			if(trans) bgcolor = 'rgba(0,0,0,0)'
+			
+			if(typeof width == 'string') width = parseInt(width)
+			if(!user) return
+			getBadge(user).then(badge=>{
+				let img = renderBadge(badge,width,bgcolor,bgcolor).toDataURL('image/png')
+				badgeImg.src = img
+				badgeLink.href = img.replace('image/png','application/octet-stream')
+				badgeLink.download = `${user}_${width}.png`
+				console.log(badge)
+				//- debugPre.innerHTML = JSON.stringify(badge,null,3)
+				if(download) badgeLink.click()
+			})
+			return false
+		}
+</script>
