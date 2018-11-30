@@ -8,6 +8,7 @@ baseURL: https://screepspl.us/
 canonifyurls: true
 paginate: 10
 enableEmoji: true
+enableGitInfo: true
 
 indexes:
   tag: "tags"
