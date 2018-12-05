@@ -1,0 +1,275 @@
+---
+title: "Hosted Agent"
+date: 2018-12-04T10:19:17-06:00
+draft: true
+menu:
+  main:
+    pre: "<i class='fa fa-user-circle fa-fw'></i>"
+    identifier: hosted-agent
+    weight: 10
+---
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.css" />
+<div id="HostedAgent">
+  <v-app>
+    <v-content>
+      <v-container fluid>
+        <v-layout wrap>
+          <v-flex xs12>
+            <v-alert type="info" :value="true">Highly Expiremental! This may be buggy, unreliable, and fail at odd times. You have been warned.</v-alert>
+            <div v-if="!configs.length">No Configs defined</div>
+            <v-alert v-for="msg in exceedsLimits" type="warning" :value="true">{{ msg }}</v-alert>
+            <v-card v-if="configs.length">
+              <v-list tow-line>
+                <v-list-tile
+                   v-for="config in configs"
+                   :key="config.pk"
+                   @click="edit(config)">
+                  <v-list-tile-content>
+                    <v-list-tile-title v-if="config.screepsAPIConfig.privateServer">
+                      {{ config.screepsAPIConfig.proto }}://{{ config.screepsAPIConfig.host }}:{{ config.screepsAPIConfig.port }}
+                    </v-list-tile-title>
+                    <v-list-tile-title v-else>
+                      https://screeps.com {{ config.screepsAPIConfig.token }}
+                    </v-list-tile-title>
+                    <v-list-tile-sub-title>
+                      {{ config.method }}:{{ config.methodConfig.shard }}:
+                      <span v-if="config.methodConfig.useSegment">segment:{{ config.methodConfig.segment }}</span>
+                      <span v-else>path:{{ config.methodConfig.path }}</span>
+                      interval:{{ config.methodConfig.interval }}
+                    </v-list-tile-sub-title>
+                  </v-list-tile-content>
+                  <v-list-tile-action>
+                    <v-btn icon ripple @click="remove(config)"><v-icon>delete</v-icon></v-btn>
+                  </v-list-tile-action>
+                </v-list-tile>
+              </v-list>
+            </v-card>
+          </v-flex>
+          <v-dialog v-if="editConfig" v-model="editConfig">
+            <v-card>
+              <v-card-title class="headline" primary-title>Edit Config</v-card-title>
+              <v-card-text>
+                <v-form>
+                  <v-switch 
+                    v-model="editConfig.screepsAPIConfig.privateServer"
+                    label="Private Server"></v-switch>
+                  <v-text-field
+                    v-if="!editConfig.screepsAPIConfig.privateServer"
+                    v-model="editConfig.screepsAPIConfig.token"
+                    hint="Visit your account on screeps.com to get your token"
+                    label="Screeps Token"></v-text-field>
+                  <v-layout row v-if="editConfig.screepsAPIConfig.privateServer">
+                    <v-flex xs3 sm2>
+                      <v-select
+                        :items="['http','https']"
+                        v-model="editConfig.screepsAPIConfig.protocol"
+                        label="Protocol"></v-select>
+                    </v-flex>
+                    <v-flex xs6 sm8>
+                      <v-text-field
+                        v-model="editConfig.screepsAPIConfig.host"
+                        label="Hostname"></v-text-field>
+                    </v-flex>
+                    <v-flex xs3>
+                      <v-text-field
+                        v-model="editConfig.screepsAPIConfig.port"
+                        label="Port"></v-text-field>
+                    </v-flex>
+                  </v-layout>
+                  <v-layout row v-if="editConfig.screepsAPIConfig.privateServer">
+                    <v-flex xs6>
+                      <v-text-field
+                        v-model="editConfig.screepsAPIConfig.username"
+                        label="Username"></v-text-field>
+                    </v-flex>
+                    <v-flex xs6>
+                      <v-text-field
+                        type="password"
+                        v-model="editConfig.screepsAPIConfig.password"
+                        label="Password"></v-text-field> 
+                    </v-flex>
+                  </v-layout>
+                  <div v-if="editConfig.screepsAPIConfig.privateServer">Note: Changing private server settings require reentering your password</div>
+                  <v-divider></v-divider>
+                  <v-select 
+                    :items="methods" 
+                    item-text="label"
+                    item-value="value"
+                    label="Method"
+                    v-model="editConfig.method"></v-select>
+                  <v-text-field v-model="editConfig.methodConfig.prefix" label="Prefix" hint="(Optional) inserts the prefix into every stat ex: screeps.ags131.prefix.cpu.used"></v-text-field>
+                  <div v-if="editConfig.method === 'memory'">
+                    <v-text-field v-model="editConfig.methodConfig.shard" label="shard" hint="shard is ignored for private servers"></v-text-field>
+                    <v-switch v-model="editConfig.methodConfig.useSegment" label="Segment"></v-switch>
+                    <v-text-field v-if="!editConfig.methodConfig.useSegment" v-model="editConfig.methodConfig.path" label="path"></v-text-field>
+                    <v-text-field v-if="editConfig.methodConfig.useSegment" v-model="editConfig.methodConfig.segment" label="segment" type="number"></v-text-field>
+                    <v-text-field v-model="editConfig.methodConfig.interval" label="interval" type="number"></v-text-field>
+                  </div>
+                </v-form>
+              </v-card-text>
+              <v-divider></v-divider>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn flat @click.prevent="cancel()">Cancel</v-btn>
+                <v-btn flat @click.prevent="save()" class="primary">Save</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+        <v-btn @click.prevent="addConfig()">New</v-btn>
+      </v-content>
+    </v-container>
+  </v-app>
+</div>
+<style>
+  .form-group {
+    display: flex;
+    max-width: 350px;
+  }
+  .form-label, .form-control {
+    flex: 1;
+  }
+  #graphs {
+    width: 100%;
+    height: 400px;
+  }
+  /*
+  .edit-agent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .edit-agent__label {
+    flex: 100px;
+  }
+  .edit-agent > * {
+    flex: 1;
+  }
+  */
+</style>
+<script>
+const URL = '/api/auth/register'
+// const URL = 'http://localhost:8080/register'
+
+const http = axios.create({
+  baseURL: 'http://localhost:8080'
+})
+const vue = new Vue({
+  el: '#HostedAgent',
+  data() {
+    return {
+      configs: [],
+      editConfig: null,
+      methods: [
+        { label: 'Memory', value: 'memory' },
+        { label: 'Console', value: 'console' }
+      ]
+    }
+  },
+  computed: {
+    exceedsLimits () {
+      const limits = []
+      const HOUR = 60 * 60
+      const DAY = 24 * HOUR
+      const MEMORY_LIMIT = 1440
+      const SEGMENT_LIMIT = 360
+      const memoryCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l,v) => (DAY / v.methodConfig.interval) + l, 0)
+      const segmentCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.method === 'memory' && c.methodConfig.useSegment).reduce((l,v) => (HOUR / v.methodConfig.interval) + l, 0)
+      console.log(memoryCalls, segmentCalls)
+      if (memoryCalls > MEMORY_LIMIT) {
+        limits.push(`Memory rate limit exceeded! ${memoryCalls}/day (Limit: ${MEMORY_LIMIT}/day)`)
+      }
+      if (segmentCalls > SEGMENT_LIMIT) {
+        limits.push(`Segment rate limit exceeded! ${segmentCalls}/hour (Limit: ${SEGMENT_LIMIT}/hour)`)
+      }
+      return limits
+    }
+  },
+  created() {
+    this.getList()
+  },
+  methods: {
+    async getList() {
+      const { data } = await http.get('/agent', { validateStatus: null })
+      if (data.error) {
+        if (data.error === 'unauthorized') {
+          location.href = '/login?backTo=/services/hosted-agent'
+          return
+        }
+      } else {
+        this.configs = data
+      }
+    },
+    addConfig() {
+      const config = {
+        screepsAPIConfig: {
+          token: ''
+        },
+        method: 'memory',
+        methodConfig: {
+          shard: 'shard1',
+          path: '__stats',
+          segment: '',
+          interval: 60
+        }
+      }
+      this.editConfig = config
+    },
+    async edit(config) {
+      this.editConfig = JSON.parse(JSON.stringify(config))
+    },
+    async cancel() {
+      this.editConfig = null
+    },
+    async save() {
+      const config = this.editConfig
+      if (config.pk) {
+        const { data } = await http.post(`/agent/${config.pk}`, config)
+        const index = this.configs.findIndex(c=>c.pk === config.pk)
+        this.configs.splice(index, 1, data)
+      } else {
+        const { data } = await http.post(`/agent`, config)
+        config.pk = data.pk
+        this.configs.push(data)
+      }
+      this.editConfig = null
+    },
+    async remove(config) {
+      if (config.pk) {
+        await http.delete(`/agent/${config.pk}`)
+      }
+      const ind = this.configs.indexOf(config)
+      this.configs.splice(ind, 1)
+      this.configs = this.configs
+      if (this.editConfig === config) {
+        this.editConfig = null
+      }
+    },
+    async signup() {
+      console.log('signup')
+      const err = (msg) => { this.error = msg }
+      if (!this.username) return err('Username Required')
+      if (!this.email) return err('Email Required')
+      if (!this.password) return err('Password Required')
+      if (this.password !== this.password2) return err('Passwords do not match')
+      if (this.password.length < 8) return err('Password too short (<8)')
+
+      this.showForm = false
+      const { data: { success=false, error='', message='' } } = await axios.post(URL, {
+        username: this.username,
+        password: this.password,
+        email: this.email
+      }, { validateStatus: null })
+      if (success) {
+        this.success = 'User created successfully!'
+      } else {
+        this.showForm = true
+        this.error = message || error
+      }
+    }
+  }
+})
+</script>
