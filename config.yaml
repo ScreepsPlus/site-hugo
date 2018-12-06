@@ -39,8 +39,8 @@ menu:
     identifier: "wiki"
     url: "https://wiki.screepspl.us"
   - name: 'Signin'
-    pre: "<br><i class='fa fa-user-plus fa-fw'></i>"
-    weight: 100
+    pre: "<i class='fa fa-user fa-fw'></i>"
+    weight: 101
     identifier: "signin"
     url: "/login"
 
