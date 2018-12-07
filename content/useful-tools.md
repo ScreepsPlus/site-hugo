@@ -5,8 +5,8 @@ draft: false
 menu:
   main:
     pre: "<i class='fa fa-info fa-fw'></i>"
-    identifier: useful-tools
-    weight: 10
+    weight: 100
+    parent: External
 ---
 
 #### Web Tools

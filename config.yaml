@@ -23,6 +23,13 @@ params:
 
 menu:
   main:
+  - name: "Services"
+    pre: "<i class='fa fa-chevron-right fa-fw'></i>"
+    itentifier: "services"
+    weight: 10
+  - name: "External"
+    pre: "<i class='fa fa-external-link fa-fw'></i>"
+    weight: 50
   - name: "Home"
     pre: "<i class='fa fa-home fa-fw'></i>"
     weight: 1
@@ -33,17 +40,26 @@ menu:
     weight: 80
     identifier: "forum"
     url: "https://screeps.com/forum/category/25/screepsplus"
+    parent: External
   - name: "Wiki"
     pre: "<i class='fa fa-book fa-fw'></i>"
-    weight: 90
+    weight: 50
     identifier: "wiki"
     url: "https://wiki.screepspl.us"
-  - name: 'Signin'
+    parent: External
+  - name: Account
     pre: "<i class='fa fa-user fa-fw'></i>"
-    weight: 101
-    identifier: "signin"
+    weight: 90
+  - name: 'Signin/Logout'
+    pre: "<i class='fa fa-sign-in fa-fw'></i>"
+    weight: 10
     url: "/login"
-
+    parent: Account
+  - name: 'Grafana'
+    pre: "<i class='fa fa-line-chart fa-fw'></i>"
+    url: "/grafana"
+    parent: Account
+    
 
 social:
   twitter: "ags131"
