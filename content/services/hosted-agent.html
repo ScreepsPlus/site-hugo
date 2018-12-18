@@ -11,6 +11,7 @@ menu:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.css" />
 <div id="HostedAgent">
@@ -23,7 +24,7 @@ menu:
             <div v-if="!configs.length">No Configs defined</div>
             <v-alert v-for="msg in exceedsLimits" type="warning" :value="true">{{ msg }}</v-alert>
             <v-card v-if="configs.length">
-              <v-list tow-line>
+              <v-list two-line>
                 <v-list-tile
                    v-for="config in configs"
                    :key="config.pk"
@@ -40,6 +41,12 @@ menu:
                       <span v-if="config.methodConfig.useSegment">segment:{{ config.methodConfig.segment }}</span>
                       <span v-else>path:{{ config.methodConfig.path }}</span>
                       interval:{{ config.methodConfig.interval }}
+                    </v-list-tile-sub-title>
+                    <v-list-tile-sub-title v-if="config.lastErrorText">
+                      <v-layout>
+                        <v-flex class="red--text">{{ config.lastErrorText }}</v-flex>
+                        <v-flex class="text-xs-right">{{ fromNow(config.lastErrorTime) }}</v-flex>
+                      </v-layout>
                     </v-list-tile-sub-title>
                   </v-list-tile-content>
                   <v-list-tile-action>
@@ -151,11 +158,10 @@ menu:
   */
 </style>
 <script>
-const URL = '/api/auth/register'
-// const URL = 'http://localhost:8080/register'
 
 const http = axios.create({
   baseURL: '/api'
+  // baseURL: 'http://localhost:8080/'
 })
 const vue = new Vue({
   el: '#HostedAgent',
@@ -202,6 +208,9 @@ const vue = new Vue({
       } else {
         this.configs = data
       }
+    },
+    fromNow(date) {
+      return moment(date).fromNow()
     },
     addConfig() {
       const config = {
