@@ -220,9 +220,10 @@ const vue = new Vue({
         method: 'memory',
         methodConfig: {
           shard: 'shard1',
-          path: '__stats',
+          path: 'stats',
           segment: '',
-          interval: 60
+          interval: 60,
+          useSegment: false
         }
       }
       this.editConfig = config
