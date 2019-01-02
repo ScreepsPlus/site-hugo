@@ -20,7 +20,7 @@ menu:
       <v-container fluid>
         <v-layout wrap>
           <v-flex xs12>
-            <v-alert type="info" :value="true">Highly Expiremental! This may be buggy, unreliable, and fail at odd times. You have been warned.</v-alert>
+            <v-alert type="info" :value="false">Highly Expiremental! This may be buggy, unreliable, and fail at odd times. You have been warned.</v-alert>
             <div v-if="!configs.length">No Configs defined</div>
             <v-alert v-for="msg in exceedsLimits" type="warning" :value="true">{{ msg }}</v-alert>
             <v-card v-if="configs.length">
