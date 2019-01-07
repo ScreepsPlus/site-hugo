@@ -31,7 +31,7 @@ menu:
                    @click="edit(config)">
                   <v-list-tile-content>
                     <v-list-tile-title v-if="config.screepsAPIConfig.privateServer">
-                      {{ config.screepsAPIConfig.proto }}://{{ config.screepsAPIConfig.host }}:{{ config.screepsAPIConfig.port }}
+                      {{ config.screepsAPIConfig.protocol }}://{{ config.screepsAPIConfig.hostname }}:{{ config.screepsAPIConfig.port }}
                     </v-list-tile-title>
                     <v-list-tile-title v-else>
                       https://screeps.com {{ config.screepsAPIConfig.token }}
