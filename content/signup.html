@@ -29,10 +29,9 @@ menu:
       <input class="form-control" type="password" name="password2" v-model="password2" required>
     </div>
     <button type="submit">Signup</button>
-    <pre>{{ username }}</pre>
     <div class="error" v-if="error" v-text="error"></div>
-    <div class="success" v-if="success">{{ success }}</div>
   </form>
+  <div class="success" v-if="success" v-text="success"></div>
 </div>
 <style>
   .form-group {
