@@ -11,7 +11,7 @@ menu:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <div id="SignUp">
-  <form v-if="showForm" @submit.prevent="signup">
+  <form v-if="showForm" @submit.prevent="signup" action="/api/auth/register" method="POST">
     <div class="form-group">
       <label class="form-label">Username:</label>
       <input class="form-control" type="text" name="username" v-model="username" required>
