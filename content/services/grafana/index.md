@@ -26,8 +26,10 @@ screeps.com and downloads your stats, it then sends those stats here for the gra
 Want your own graphs?  
 
 1. Signup with the link on the left
-2. PM me (ags131) on [Slack](https://screeps.slack.com/messages/C2FD5CGJV) with your username for a token (This is not needed for the hosted agent and will likely be automated in the future)
-3. Install the [NodeJS Agent](https://github.com/screepsplus/node-agent) or use the [Hosted Agent]({{< ref "/services/hosted-agent" >}})
-4. Visit [Grafana](/grafana)
-5. Add a Datasource with the following settings: (Version should be set to 1.1.x) ![Settings Image](/images/datasource-settings-graphite.png)
-6. Thats it! Create a dashboard and enjoy :)
+2. Setup the [Hosted Agent]({{< ref "/services/hosted-agent" >}})
+  This is my setup to pull from segment 30, it also adds a prefix of `shard2` to the stat path. That can be left blank for no prefix. 
+    {{< imgproc hosted-agent Resize "500x" >}}Hosted Agent config example{{</ imgproc >}}
+3. Visit [Grafana](/grafana)
+4. Thats it! Create a dashboard and enjoy :)
+
+For more advanced stat collection and custom agents (Such as [NodeJS Agent](https://github.com/screepsplus/node-agent) or [Go Agent](https://github.com/screepsplus/go-agent)), you can PM me (ags131) on [Slack](https://screeps.slack.com/messages/C2FD5CGJV) with your username for a token.
