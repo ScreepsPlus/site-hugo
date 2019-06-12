@@ -31,8 +31,8 @@ For more info about BotArena, go <a href="https://botarena.screepspl.us" target=
     video._player = player
     player.initialize(video, url, true)
     player.setLowLatencyEnabled(true)
-    player.setLiveDelay(5)
-    player.setLowLatencyMinDrift(0.05)
+    player.setLiveDelay(10)
+    player.setLowLatencyMinDrift(0.1)
     player.setCatchUpPlaybackRate(0.5)
     setInterval(function () {
       var metrics = player.getMetricsFor("video");
