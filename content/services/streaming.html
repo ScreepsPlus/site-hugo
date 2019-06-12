@@ -1,0 +1,60 @@
+---
+title: "Streaming"
+date: 2019-06-12T14:01:02-05:00
+draft: false
+menu:
+  main:
+    pre: "<i class='fa fa-video-camera fa-fw'></i>"
+    identifier: streaming
+    weight: 10
+    parent: Services
+---
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<div>
+  Below are live streams I occasionally run for the screeps community. 
+</div>
+<hr />
+<h3>BotArena Stream</h3>
+For more info about BotArena, go <a href="https://botarena.screepspl.us" target="_blank">here</a>
+<br>
+<video data-stream="botarena" poster="/logo_small.png" controls autoplay></video>
+<hr />
+<h3>Test Stream</h3>
+<video data-stream="test" poster="/logo_small.png" controls autoplay></video>
+<script>
+  const baseUrl = '/live/dash'
+  const videos = document.querySelectorAll('video')
+  for (const video of videos) {
+    const url = `${baseUrl}/${video.dataset.stream}.mpd`
+    const player = dashjs.MediaPlayer().create()
+    video._player = player
+    player.initialize(video, url, true)
+    player.setLowLatencyEnabled(true)
+    player.setLiveDelay(5)
+    player.setLowLatencyMinDrift(0.05)
+    player.setCatchUpPlaybackRate(1)
+    setInterval(function () {
+      var metrics = player.getMetricsFor("video");
+      var dashMetrics = player.getDashMetrics();
+
+      var currentLatency = parseFloat(player.getCurrentLiveLatency(), 10);
+      var currentMinDrift = parseFloat(player.getLowLatencyMinDrift(), 10);
+      var currentPlaybackRate = player.getPlaybackRate();
+      var currentBuffer = dashMetrics.getCurrentBufferLevel(metrics);
+      console.log(video.dataset.stream, currentLatency, currentMinDrift, currentPlaybackRate, currentBuffer)
+    }, 5000)
+  }
+
+</script>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+  }
+
+  video {
+    width: 100%;
+    max-width: 1000px;
+  }
+</style>
