@@ -32,7 +32,7 @@ For more info about BotArena, go <a href="https://botarena.screepspl.us" target=
     player.setLowLatencyEnabled(true)
     player.setLiveDelay(5)
     player.setLowLatencyMinDrift(0.05)
-    player.setCatchUpPlaybackRate(1)
+    player.setCatchUpPlaybackRate(0.5)
     setInterval(function () {
       var metrics = player.getMetricsFor("video");
       var dashMetrics = player.getDashMetrics();
