@@ -18,7 +18,21 @@ menu:
 <h3>BotArena Stream</h3>
 For more info about BotArena, go <a href="https://botarena.screepspl.us" target="_blank">here</a>
 <br>
-Twitch Affiliate aggreement prevents me from restreaming it here live, so head on over to <a href="https://twitch.tv/ags131/">Twitch</a> to watch it live.
+<!-- Twitch Affiliate aggreement prevents me from restreaming it here live, so head on over to <a href="https://twitch.tv/ags131/">Twitch</a> to watch it live. -->
+<!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
+
+<!-- Load the Twitch embed script -->
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+<script type="text/javascript">
+  new Twitch.Embed("twitch-embed", {
+    width: 1000,
+    height: 600,
+    channel: "ags131"
+  });
+</script>
 <!-- <video data-stream="botarena" poster="/logo_small.png" controls autoplay></video> -->
 <hr />
 <h3>Test Stream</h3>
