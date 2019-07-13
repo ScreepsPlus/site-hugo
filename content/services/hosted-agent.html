@@ -70,6 +70,12 @@ menu:
                     v-model="editConfig.screepsAPIConfig.token"
                     hint="Visit your account on screeps.com to get your token"
                     label="Screeps Token"></v-text-field>
+                   <v-switch 
+                    v-if="!editConfig.screepsAPIConfig.privateServer"
+                    v-model="editConfig.screepsAPIConfig.path"
+                    false-value="/"
+                    true-value="/ptr"
+                    label="PTR"></v-switch>
                   <v-layout row v-if="editConfig.screepsAPIConfig.privateServer">
                     <v-flex xs3 sm2>
                       <v-select
