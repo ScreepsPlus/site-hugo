@@ -3,9 +3,9 @@ title: "ScreepsPlus"
 # theme: "blackburn"
 theme: ScreepsPlus
 
-baseURL: https://screepspl.us/
+# baseURL: https://screepspl.us/
 
-canonifyurls: true
+canonifyurls: false
 paginate: 10
 enableEmoji: true
 enableGitInfo: true
