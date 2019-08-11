@@ -6,6 +6,7 @@ menu:
     pre: "<i class='fa fa-info fa-fw'></i>"
     identifier: events
     weight: 10
+toc: false
 ---
 
 ## Schedule

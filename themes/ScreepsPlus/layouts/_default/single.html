@@ -4,6 +4,9 @@
 	<header>
 	  <h1>{{ .Title }}</h1>
 	  <h2>{{ .Site.Params.subtitle }}</h2>
+		{{ if .Params.toc }}
+		{{ .TableOfContents }}
+		{{ end }}
 	</header>
 
 	<content>
