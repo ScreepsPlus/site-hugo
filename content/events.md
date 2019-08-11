@@ -10,10 +10,20 @@ menu:
 
 ## Schedule
 
-| event              | start                     | end                       |
+| Event              | Start                     | End                       |
 |:-------------------|:--------------------------|:--------------------------|
 | [SWC 203](#SWC203) | Tue, Aug 12 2019, 2100UTC | Tue, Aug 27 2019, 2100UTC |
-|                    |                           |                           |
+
+<style>
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 5px;
+  border: 1px solid #AAA;
+}
+</style>
+
 
 <a name="Botarena"></a>
 ## Botarena
