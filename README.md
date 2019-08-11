@@ -1,7 +1,7 @@
 # ScreepsPl.us Site
 
 This is the primary website for ScreepsPlus.
-It uses the [https://gohugo.io/](Hugo) framework 
+It uses the [Hugo](https://gohugo.io/) framework 
 and is mostly statically generated. 
 
 `hugo server -D` will start a local dev server
