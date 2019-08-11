@@ -1,7 +1,6 @@
 ---
 title: "Events"
 date: 2019-08-10T19:59:44-05:00
-draft: true
 menu:
   main:
     pre: "<i class='fa fa-info fa-fw'></i>"
