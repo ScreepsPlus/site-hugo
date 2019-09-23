@@ -189,14 +189,21 @@ const vue = new Vue({
       const DAY = 24 * HOUR
       const MEMORY_LIMIT = 1440
       const SEGMENT_LIMIT = 360
-      const memoryCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l,v) => (DAY / v.methodConfig.interval) + l, 0)
-      const segmentCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.method === 'memory' && c.methodConfig.useSegment).reduce((l,v) => (HOUR / v.methodConfig.interval) + l, 0)
-      console.log(memoryCalls, segmentCalls)
+      const memoryCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path != '/ptr' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
+      const segmentCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path != '/ptr' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
+      const memoryCallsPTR = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/ptr' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
+      const segmentCallsPTR = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/ptr' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
       if (memoryCalls > MEMORY_LIMIT) {
         limits.push(`Memory rate limit exceeded! ${memoryCalls}/day (Limit: ${MEMORY_LIMIT}/day)`)
       }
       if (segmentCalls > SEGMENT_LIMIT) {
         limits.push(`Segment rate limit exceeded! ${segmentCalls}/hour (Limit: ${SEGMENT_LIMIT}/hour)`)
+      }
+      if (memoryCallsPTR > MEMORY_LIMIT) {
+        limits.push(`PTR Memory rate limit exceeded! ${memoryCallsPTR}/day (Limit: ${MEMORY_LIMIT}/day)`)
+      }
+      if (segmentCallsPTR > SEGMENT_LIMIT) {
+        limits.push(`PTR Segment rate limit exceeded! ${segmentCallsPTR}/hour (Limit: ${SEGMENT_LIMIT}/hour)`)
       }
       return limits
     }
