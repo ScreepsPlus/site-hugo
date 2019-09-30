@@ -70,13 +70,23 @@ menu:
                     v-model="editConfig.screepsAPIConfig.token"
                     hint="Visit your account on screeps.com to get your token"
                     label="Screeps Token"></v-text-field>
-                   <v-switch 
+                  <v-switch 
                     v-if="!editConfig.screepsAPIConfig.privateServer"
                     v-model="editConfig.screepsAPIConfig.path"
                     false-value="/"
                     true-value="/ptr"
                     label="PTR"></v-switch>
-                  <v-layout row v-if="editConfig.screepsAPIConfig.privateServer">
+                  <v-select
+                    :items="presets"
+                    item-text="label"
+                    item-value="id"
+                    label="Preset"
+                    v-model="editConfig.screepsAPIConfig.preset"
+                    v-if="editConfig.screepsAPIConfig.privateServer"></v-select>
+                  <div v-if="editConfig.screepsAPIConfig.privateServer && editConfig.screepsAPIConfig.preset !== 'custom'">
+                    <a :href="authmodURL(editConfig.screepsAPIConfig.preset)" target="_blank">Authmod Link</a>
+                  </div>
+                  <v-layout row v-if="editConfig.screepsAPIConfig.privateServer && editConfig.screepsAPIConfig.preset == 'custom'">
                     <v-flex xs3 sm2>
                       <v-select
                         :items="['http','https']"
@@ -107,7 +117,7 @@ menu:
                         label="Password"></v-text-field> 
                     </v-flex>
                   </v-layout>
-                  <div v-if="editConfig.screepsAPIConfig.privateServer">Note: Changing private server settings require reentering your password</div>
+                  <div v-if="editConfig.screepsAPIConfig.privateServer">Note: Changing private server settings require reentering your password<br /></div>
                   <v-divider></v-divider>
                   <v-select 
                     :items="methods" 
@@ -179,7 +189,15 @@ const vue = new Vue({
       methods: [
         { label: 'Memory', value: 'memory' },
         { label: 'Console', value: 'console' }
-      ]
+      ],
+      presets: [
+        { id: 'splus1', label: 'ScreepsPlus 1', hostname: 'server1.screepspl.us', port: 443, protocol: 'https' },
+        { id: 'splus2', label: 'ScreepsPlus 2 (Seasonal)', hostname: 'server2.screepspl.us', port: 443, protocol: 'https' },
+        { id: 'ba', label: 'BotArena', hostname: 'botarena.screepspl.us', port: 443, protocol: 'https' },
+        { id: 'swc', label: 'SWC', hostname: 'swc.screepspl.us', port: 443, protocol: 'https' },
+        { id: 'custom', label: 'Custom', custom: true }
+      ],
+      preset: null
     }
   },
   computed: {
@@ -212,6 +230,10 @@ const vue = new Vue({
     this.getList()
   },
   methods: {
+    authmodURL(preset) {
+      const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
+      return `${protocol}://${hostname}:${port}/authmod/password`
+    },
     async getList() {
       const { data } = await http.get('/agent', { validateStatus: null })
       if (data.error) {
@@ -220,7 +242,9 @@ const vue = new Vue({
           return
         }
       } else {
-        this.configs = data
+        if (Array.isArray(data)) {
+          this.configs = data
+        }
       }
     },
     fromNow(date) {
@@ -229,7 +253,8 @@ const vue = new Vue({
     addConfig() {
       const config = {
         screepsAPIConfig: {
-          token: ''
+          token: '',
+          preset: 'splus1'
         },
         method: 'memory',
         methodConfig: {
@@ -244,12 +269,22 @@ const vue = new Vue({
     },
     async edit(config) {
       this.editConfig = JSON.parse(JSON.stringify(config))
+      if (!this.editConfig.screepsAPIConfig.preset) {
+        this.editConfig.screepsAPIConfig.preset = 'custom'
+      }
     },
     async cancel() {
       this.editConfig = null
     },
     async save() {
       const config = this.editConfig
+      const preset = config.screepsAPIConfig.preset
+      if (preset && preset !== 'custom') {
+        const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
+        if (hostname) {
+          Object.assign(config.screepsAPIConfig, { hostname, port, protocol })
+        }
+      }
       if (config.pk) {
         const { data } = await http.post(`/agent/${config.pk}`, config)
         const index = this.configs.findIndex(c=>c.pk === config.pk)
