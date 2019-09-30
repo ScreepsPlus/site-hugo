@@ -196,8 +196,7 @@ const vue = new Vue({
         { id: 'ba', label: 'BotArena', hostname: 'botarena.screepspl.us', port: 443, protocol: 'https' },
         { id: 'swc', label: 'SWC', hostname: 'swc.screepspl.us', port: 443, protocol: 'https' },
         { id: 'custom', label: 'Custom', custom: true }
-      ],
-      preset: null
+      ]
     }
   },
   computed: {
@@ -268,10 +267,11 @@ const vue = new Vue({
       this.editConfig = config
     },
     async edit(config) {
-      this.editConfig = JSON.parse(JSON.stringify(config))
-      if (!this.editConfig.screepsAPIConfig.preset) {
-        this.editConfig.screepsAPIConfig.preset = 'custom'
+      const conf = JSON.parse(JSON.stringify(config))
+      if (!conf.screepsAPIConfig.preset) {
+        conf.screepsAPIConfig.preset = 'custom'
       }
+      this.editConfig = conf
     },
     async cancel() {
       this.editConfig = null
