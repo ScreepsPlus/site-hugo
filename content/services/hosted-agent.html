@@ -279,11 +279,15 @@ const vue = new Vue({
     async save() {
       const config = this.editConfig
       const preset = config.screepsAPIConfig.preset
-      if (preset && preset !== 'custom') {
-        const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
-        if (hostname) {
-          Object.assign(config.screepsAPIConfig, { hostname, port, protocol })
+      if (config.screepsAPIConfig.privateServer) {
+        if (preset !== 'custom') {
+          const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
+          if (hostname) {
+            Object.assign(config.screepsAPIConfig, { hostname, port, protocol })
+          }
         }
+      } else {
+        Object.assign(config.screepsAPIConfig, { hostname: 'screeps.com', port: 443, protocol: 'https' })
       }
       if (config.pk) {
         const { data } = await http.post(`/agent/${config.pk}`, config)
