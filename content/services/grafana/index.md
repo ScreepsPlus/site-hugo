@@ -23,7 +23,11 @@ screeps.com and downloads your stats, it then sends those stats here for the gra
 ![Agent Diagram](/images/Diagram1.png)
 
 
-Want your own graphs?  
+### Want your own graphs?
+There are two methods:
+
+#### Easy (Hosted Agent)
+With this method you do have to provide a token from MMO or password for a private server but you don't have to run anything permanently yourself.
 
 1. Signup with the link on the left
 2. Setup the [Hosted Agent]({{< ref "/services/hosted-agent" >}})
@@ -32,4 +36,5 @@ Want your own graphs?
 3. Visit [Grafana](/grafana)
 4. Thats it! Create a dashboard and enjoy :)
 
+#### Advanced
 For more advanced stat collection and custom agents (Such as [NodeJS Agent](https://github.com/screepsplus/node-agent) or [Go Agent](https://github.com/screepsplus/go-agent)), you can PM me (ags131) on [Slack](https://screeps.slack.com/messages/C2FD5CGJV) with your username for a token.
