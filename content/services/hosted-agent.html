@@ -289,6 +289,9 @@ const vue = new Vue({
       } else {
         Object.assign(config.screepsAPIConfig, { hostname: 'screeps.com', port: 443, protocol: 'https' })
       }
+      if (!config.methodConfig.useSegment) {
+        config.methodConfig.segment = ''
+      }
       if (config.pk) {
         const { data } = await http.post(`/agent/${config.pk}`, config)
         const index = this.configs.findIndex(c=>c.pk === config.pk)
