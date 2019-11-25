@@ -134,11 +134,15 @@ menu:
                     <v-text-field v-model="editConfig.methodConfig.interval" label="interval" type="number"></v-text-field>
                   </div>
                 </v-form>
+                <div v-if="testResults">
+                  <div v-for="r of testResults" v-text="r"></div>
+                </div>
               </v-card-text>
               <v-divider></v-divider>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn flat @click.prevent="cancel()">Cancel</v-btn>
+                <v-btn flat @click.prevent="test()">Test</v-btn>
                 <v-btn flat @click.prevent="save()" class="primary">Save</v-btn>
               </v-card-actions>
             </v-card>
@@ -178,7 +182,6 @@ menu:
 
 const http = axios.create({
   baseURL: '/api'
-  // baseURL: 'http://localhost:8080/'
 })
 const vue = new Vue({
   el: '#HostedAgent',
@@ -186,6 +189,7 @@ const vue = new Vue({
     return {
       configs: [],
       editConfig: null,
+      testResults: null,
       methods: [
         { label: 'Memory', value: 'memory' },
         { label: 'Console', value: 'console' }
@@ -276,8 +280,7 @@ const vue = new Vue({
     async cancel() {
       this.editConfig = null
     },
-    async save() {
-      const config = this.editConfig
+    cleanConfig(config) {
       const preset = config.screepsAPIConfig.preset
       if (config.screepsAPIConfig.privateServer) {
         if (preset !== 'custom') {
@@ -292,6 +295,15 @@ const vue = new Vue({
       if (!config.methodConfig.useSegment) {
         config.methodConfig.segment = ''
       }
+      return config
+    },
+    async test() {
+      const config = this.cleanConfig(this.editConfig)
+      const { data } = await http.post(`/agent/test`, config)
+      this.testResults = data
+    },
+    async save() {
+      const config = this.cleanConfig(this.editConfig)
       if (config.pk) {
         const { data } = await http.post(`/agent/${config.pk}`, config)
         const index = this.configs.findIndex(c=>c.pk === config.pk)
