@@ -13,7 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [SWC 204](#SWC204)     | Sat, Nov 29th 2019, TBD   | Sat, Dec 13th 2019, TBD   |
+| [SWC 204](#SWC204)     | [Sat, Nov 29th 2019, 2100 UTC][SWC204START]   | Sat, Dec 13th 2019, 2100 UTC   |
 | [BotArena 204](#BA204) | Fri, Sep 27 2019, 2100UTC | Fri, Oct 11 2019, 2100UTC |
 | [SWC 203](#SWC203)     | Tue, Aug 12 2019, 2100UTC | Tue, Aug 27 2019, 2100UTC |
 
@@ -104,9 +104,9 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 *sign up in #swc in screeps slack server
 
-*spawn in will be allowed starting : Fri, Nov 29 2019, TBD
+*spawn in will be allowed starting : [Fri, Nov 29 2019, 2100 UTC][SWC204SPAWN]
 
-*tick start and official round start : Sat, Nov 30 2019, TBD
+*tick start and official round start : [Sat, Nov 30 2019, 2100 UTC][SWC204START]
 
 *free for all combat (no teams)(alliances of opportunity are allowed)
 
@@ -123,6 +123,9 @@ RESULTS:
 2nd place :
 
 3rd place :
+
+[SWC204SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+204&iso=20191129T21
+[SWC204START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+204&iso=20191130T21
 
 <a name="SWC203"></a>
 #### [SWC](#SWC) 203 - team game with 3 teams on a 2x2 map (4 sectors)
