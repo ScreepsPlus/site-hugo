@@ -13,10 +13,11 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100UTC][BA205START] | Sat, Feb 08 2020, 2100UTC |
+| [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START]   | Fri, Mar 13 2020, 2100 UTC |
+| [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100 UTC][BA205START] | Sun, Feb 09 2020, 1402 UTC |
 | [SWC 204](#SWC204)     | [Sat, Nov 29 2019, 2100 UTC][SWC204START]   | Sat, Dec 13 2019, 2100 UTC   |
-| [BotArena 204](#BA204) | Fri, Sep 27 2019, 2100UTC | Fri, Oct 11 2019, 2100UTC |
-| [SWC 203](#SWC203)     | Tue, Aug 12 2019, 2100UTC | Tue, Aug 27 2019, 2100UTC |
+| [BotArena 204](#BA204) | Fri, Sep 27 2019, 2100 UTC | Fri, Oct 11 2019, 2100 UTC |
+| [SWC 203](#SWC203)     | Tue, Aug 12 2019, 2100 UTC | Tue, Aug 27 2019, 2100 UTC |
 
 <style>
 table {
@@ -65,6 +66,8 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 * tick start and official round start : [Sat, Jan 25 2020, 2100UTC][BA205START]
 
+* round end : ~~Sat, Feb 08 2020, 2100UTC~~ Sun, Feb 09 2020, 1402UTC * round extended due to server down time
+
 * free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
 
 * 1 sector, no portals
@@ -77,11 +80,11 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : ???
+1st place : Geir1983
 
-2nd place : ????
+2nd place : QzarSTB & Snowgoose
 
-3rd place : ?????
+3rd place : Tigga
 
 [BA205SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200124T21
 [BA205START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200125T21
@@ -123,13 +126,49 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 ### Rules:
 
-* during spawn in ticks will be paused and you can choose any available room on a first come first serve basis
+* during spawn in ticks will be paused and you can choose any available room on a first come first serve basis unless round rules specify differently
 
-* you can respawn into a different available room at any point up until tick start
+* you can respawn into a different available room at any point up until tick start unless round rules specify differently
 
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+<a name="SWC205"></a>
+#### [SWC](#SWC) 205 - multi-teams, ? sectors
+
+* sign up in #swc in screeps slack server
+
+* spawn in will be allowed starting : [Wed, Feb 26 2020, 1500 UTC][SWC205SPAWN]
+
+* spawn in will be done by randomized team order on a turn basis
+
+* tick start and official round start : [Fri, Feb 28 2020, 2100 UTC][SWC205START]
+
+* team round with TBD teams and 3 players per team at most
+
+* teams will be chosen by pre-selected captains
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* Starting GCL = TBD
+
+* Starting GPL = TBD
+
+* victory will be based on teams total room's with spawns rcl value across all team members
+
+* respawns will not be allowed after tick start
+
+RESULTS:
+
+1st place : ???
+
+2nd place : ???
+
+3rd place : ???
+
+[SWC205SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+205&iso=20200226T15
+[SWC205START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+205&iso=20200228T21
+
 <a name="SWC204"></a>
 #### [SWC](#SWC) 204 - ffa, 2 sectors
 
