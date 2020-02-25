@@ -134,7 +134,7 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 ### Rounds:
 <a name="SWC205"></a>
-#### [SWC](#SWC) 205 - multi-teams, ? sectors
+#### [SWC](#SWC) 205 - multi-teams (4) , 2 sectors
 
 * sign up in #swc in screeps slack server
 
@@ -144,19 +144,25 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * tick start and official round start : [Fri, Feb 28 2020, 2100 UTC][SWC205START]
 
-* team round with TBD teams and 3 players per team at most
+* team round with 4 teams and 3 players per team at most
 
-* teams will be chosen by pre-selected captains
+* teams will be chosen by pre-selected captains (Robalian, Tigga, Saruss, Geir1983)
 
 * CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
 
-* Starting GCL = TBD
+* Starting GCL = 0
 
-* Starting GPL = TBD
+* Starting GPL = 0
 
 * victory will be based on teams total room's with spawns rcl value across all team members
 
-* respawns will not be allowed after tick start
+* respawns will not be allowed during spawn in or after tick start
+
+* teams:
+    * 1) qnz, Robalian, Yoner
+    * 2) Sergey, Snowgoose, Tigga
+    * 3) QzarSTB, RayderBlitz, Saruss
+    * 4) Extreminador, Geir1983, Szpadel
 
 RESULTS:
 
