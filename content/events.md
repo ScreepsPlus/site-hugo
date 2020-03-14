@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [BotArena 206](#BA206) | TBD | TBD |
 | [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START]   | Fri, Mar 13 2020, 2100 UTC |
 | [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100 UTC][BA205START] | Sun, Feb 09 2020, 1402 UTC |
 | [SWC 204](#SWC204)     | [Sat, Nov 29 2019, 2100 UTC][SWC204START]   | Sat, Dec 13 2019, 2100 UTC   |
@@ -57,6 +58,23 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+<a name="BA206"></a>
+#### [Botarena](#Botarena) 206 - ???, ??? sector
+
+* sign up in #botarena in screeps slack server
+
+* spawn in will be allowed starting : TBD
+
+* tick start and official round start : TBD
+
+RESULTS:
+
+1st place : ???
+
+2nd place : ???
+
+3rd place : ???
+
 <a name="BA205"></a>
 #### [Botarena](#Botarena) 205 - ffa, 1 sector
 
@@ -166,11 +184,13 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 RESULTS:
 
-1st place : ???
+1st place : Sergey, Snowgoose, Tigga
 
-2nd place : ???
+RECAPS:
 
-3rd place : ???
+Screeps Warfare Championship 205 in 60 seconds (courtesy of joethebarber): https://www.youtube.com/watch?v=KbCCc3kNLSw
+
+Screeps Warfare Championship 205: 1,440x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=kmQhv5NsLw0
 
 [SWC205SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+205&iso=20200226T15
 [SWC205START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+205&iso=20200228T21
