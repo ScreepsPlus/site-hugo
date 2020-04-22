@@ -13,7 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [BotArena 206](#BA206) | TBD | TBD |
+| [BotArena 206](#BA206) | [Sat, Apr 25 2020, 2100 UTC][BA206START]   | Sat, May 09 2020, 2100 UTC |
 | [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START]   | Fri, Mar 13 2020, 2100 UTC |
 | [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100 UTC][BA205START] | Sun, Feb 09 2020, 1402 UTC |
 | [SWC 204](#SWC204)     | [Sat, Nov 29 2019, 2100 UTC][SWC204START]   | Sat, Dec 13 2019, 2100 UTC   |
@@ -59,13 +59,25 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 ### Rounds:
 <a name="BA206"></a>
-#### [Botarena](#Botarena) 206 - ???, ??? sector
+#### [Botarena](#Botarena) 206 - ffa, 1 sector
 
 * sign up in #botarena in screeps slack server
 
-* spawn in will be allowed starting : TBD
+* spawn in will be allowed starting : [Fri, Apr 24 2020, 2100UTC][BA206SPAWN]
 
-* tick start and official round start : TBD
+* tick start and official round start : [Sat, Apr 25 2020, 2100UTC][BA206START]
+
+* round end : Sat, May 09 2020, 2100UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* 1 sector, no portals
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using new automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's (with spawns) rcl value
 
 RESULTS:
 
@@ -74,6 +86,9 @@ RESULTS:
 2nd place : ???
 
 3rd place : ???
+
+[BA206SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200424T21
+[BA206START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200425T21
 
 <a name="BA205"></a>
 #### [Botarena](#Botarena) 205 - ffa, 1 sector
