@@ -294,6 +294,9 @@ const vue = new Vue({
       } else {
         Object.assign(config.screepsAPIConfig, { hostname: 'screeps.com', port: 443, protocol: 'https' })
       }
+      if (!config.methodConfig.path) {
+        config.methodConfig.path = 'stats'
+      }
       if (!config.methodConfig.useSegment) {
         config.methodConfig.segment = ''
       }
