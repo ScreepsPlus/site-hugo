@@ -59,7 +59,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 ### Rounds:
 <a name="BA206"></a>
-#### [Botarena](#Botarena) 206 - ffa, 1 sector
+#### [Botarena](#Botarena) 206 - ffa, 2 sector, 16 players
 
 * sign up in #botarena in screeps slack server
 
@@ -71,7 +71,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 * free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
 
-* 1 sector, no portals
+* 2 sector, center room portals to adjacent sector
 
 * CPULimit = Math.min(20 + GCL * 15, 150);
 
@@ -81,11 +81,11 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : ???
+1st place : Tigga
 
-2nd place : ???
+2nd place : Geir1983 & QzarSTB
 
-3rd place : ???
+3rd place : Yoner
 
 [BA206SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200424T21
 [BA206START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200425T21
