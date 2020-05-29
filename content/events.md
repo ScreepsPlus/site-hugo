@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [SWC 206](#SWC206)     | [Sat, Jun 06 2020, 2100 UTC][SWC206START]   | Sat, Jun 20 2020, 2100 UTC |
 | [BotArena 206](#BA206) | [Sat, Apr 25 2020, 2100 UTC][BA206START]   | Sat, May 09 2020, 2100 UTC |
 | [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START]   | Fri, Mar 13 2020, 2100 UTC |
 | [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100 UTC][BA205START] | Sun, Feb 09 2020, 1402 UTC |
@@ -166,6 +167,36 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+<a name="SWC206"></a>
+#### [SWC](#SWC) 206 - KiLL_tHe_dRag0n! , 2 sectors
+
+* sign up to be a knight in #swc in the screeps slack server
+
+* spawn in will be allowed starting : [Fri, Jun 05 2020, 2100 UTC][SWC206SPAWN]
+
+* tick start and official round start : [Sat, Jun 06 2020, 2100 UTC][SWC206START]
+
+* A team of knights will be pitted against two deadly dragons (Tigga and Geir1983) in a classic tale of kill or be killed
+
+* knights will be allowed to spawn in the lower sector only, dragons will spawn in the upper sector only
+
+* No respawning is allowed once ticks start
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory will be based on if both dragons can be wiped by the end of the round
+
+* teams:
+    * dragons: Geir1983, Tigga
+    * knights: TBD
+
+RESULTS:
+
+Winner : TBD
+
+[SWC206SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200605T21
+[SWC206START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200606T21
+
 <a name="SWC205"></a>
 #### [SWC](#SWC) 205 - multi-teams (4) , 2 sectors
 
