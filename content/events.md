@@ -168,7 +168,7 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 ### Rounds:
 <a name="SWC206"></a>
-#### [SWC](#SWC) 206 - KiLL_tHe_dRag0n! , 2 sectors
+#### [SWC](#SWC) 206 - KiLL_tHe_dRag0n! , 3 sectors
 
 * sign up to be a knight in #swc in the screeps slack server
 
@@ -178,7 +178,11 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * A team of knights will be pitted against two deadly dragons (Tigga and Geir1983) in a classic tale of kill or be killed
 
-* knights will be allowed to spawn in the lower sector only, dragons will spawn in the upper sector only
+* knights will be allowed to spawn in the nothern and eastern sectors only, dragons will spawn in the southwestern sector only
+
+* dragons will have a spawn wall in place around their sector for 24 hrs
+
+* dragons will receive an initial energy resource injection of ~1.6million energy each to allow them to establish themselves
 
 * No respawning is allowed once ticks start
 
@@ -188,11 +192,11 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * teams:
     * dragons: Geir1983, Tigga
-    * knights: TBD
+    * knights: Builder, Robalian, QzarSTB, Szpadel, qnz, Snowgoose, RayderBlitz, Saruss, Sergey, dubu, duckymirror, Yoner, nyoom
 
 RESULTS:
 
-Winner : TBD
+Winner : knights! Wipe occured @ Tick # 942676 6/19/20 2134 UTC
 
 [SWC206SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200605T21
 [SWC206START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200606T21
