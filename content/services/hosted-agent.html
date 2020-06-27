@@ -290,7 +290,7 @@ const vue = new Vue({
         if (preset !== 'custom') {
           const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
           if (hostname) {
-            Object.assign(config.screepsAPIConfig, { hostname, port, protocol })
+            Object.assign(config.screepsAPIConfig, { hostname: hostname.replace(/[^a-z0-9._-]/i, ''), port, protocol })
           }
         }
       } else {
