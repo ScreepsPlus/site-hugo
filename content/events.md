@@ -13,11 +13,12 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [SWC 206](#SWC206)     | [Sat, Jun 06 2020, 2100 UTC][SWC206START]   | Sat, Jun 20 2020, 2100 UTC |
-| [BotArena 206](#BA206) | [Sat, Apr 25 2020, 2100 UTC][BA206START]   | Sat, May 09 2020, 2100 UTC |
-| [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START]   | Fri, Mar 13 2020, 2100 UTC |
+| [S+2 RESET](#SPLUS2RESET202007) | [Fri, Jul 03 2020, 1600 UTC][SPLUS2RESET202007START] | |
+| [SWC 206](#SWC206)     | [Sat, Jun 06 2020, 2100 UTC][SWC206START] | Sat, Jun 20 2020, 2100 UTC |
+| [BotArena 206](#BA206) | [Sat, Apr 25 2020, 2100 UTC][BA206START] | Sat, May 09 2020, 2100 UTC |
+| [SWC 205](#SWC205)     | [Fri, Feb 28 2020, 2100 UTC][SWC205START] | Fri, Mar 13 2020, 2100 UTC |
 | [BotArena 205](#BA205) | [Sat, Jan 25 2020, 2100 UTC][BA205START] | Sun, Feb 09 2020, 1402 UTC |
-| [SWC 204](#SWC204)     | [Sat, Nov 29 2019, 2100 UTC][SWC204START]   | Sat, Dec 13 2019, 2100 UTC   |
+| [SWC 204](#SWC204)     | [Sat, Nov 29 2019, 2100 UTC][SWC204START] | Sat, Dec 13 2019, 2100 UTC |
 | [BotArena 204](#BA204) | Fri, Sep 27 2019, 2100 UTC | Fri, Oct 11 2019, 2100 UTC |
 | [SWC 203](#SWC203)     | Tue, Aug 12 2019, 2100 UTC | Tue, Aug 27 2019, 2100 UTC |
 
@@ -31,6 +32,25 @@ td, th {
 }
 </style>
 
+<a name="SPLUS2"></a>
+## ScreepsPlus Seasonal
+ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you love with the added benefit of being reset approximately every 3 months.
+
+### Resets:
+<a name="SPLUS2RESET202007"></a>
+#### 2020 - 07
+
+* wipe and rebuild will commence : Thu, Jul 02 2020, 1300UTC
+
+* spawn in will be allowed starting : Thu, Jul 02 2020, 1600UTC
+
+* tick start : [Fri, Jul 03 2020, 1600UTC][SPLUS2RESET202007START]
+
+* map will be 4x4 sectors but only the middle 4 sectors will initially be open
+
+* 2 border sectors will be opened each week as respawn zones that will last for 7 days until all sectors are open
+
+[SPLUS2RESET202007START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2020+07&iso=20200703T16
 
 <a name="Botarena"></a>
 ## Botarena
