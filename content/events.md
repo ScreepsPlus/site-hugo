@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [BotArena 207](#BA207) | [Sat, Jul 18 2020, 2100 UTC][BA207START] | Sat, Aug 01 2020, 2100 UTC |
 | [S+2 RESET](#SPLUS2RESET202007) | [Fri, Jul 03 2020, 1600 UTC][SPLUS2RESET202007START] | |
 | [SWC 206](#SWC206)     | [Sat, Jun 06 2020, 2100 UTC][SWC206START] | Sat, Jun 20 2020, 2100 UTC |
 | [BotArena 206](#BA206) | [Sat, Apr 25 2020, 2100 UTC][BA206START] | Sat, May 09 2020, 2100 UTC |
@@ -79,6 +80,39 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+
+<a name="BA207"></a>
+#### [Botarena](#Botarena) 207 - ffa, ? sector, ? players
+
+* sign up in #botarena in screeps slack server
+
+* spawn in will be allowed starting : [Fri, Jul 17 2020, 2100UTC][BA207SPAWN]
+
+* tick start and official round start : [Sat, Jul 18 2020, 2100UTC][BA207START]
+
+* round end : Sat, Aug 01 2020, 2100UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* ? sector, center room portals to adjacent sector
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using new automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's (with spawns) rcl value
+
+RESULTS:
+
+1st place : 
+
+2nd place : 
+
+3rd place : 
+
+[BA207SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200717T21  
+[BA207START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200718T21
+
 <a name="BA206"></a>
 #### [Botarena](#Botarena) 206 - ffa, 2 sector, 16 players
 
