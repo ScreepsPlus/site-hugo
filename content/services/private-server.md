@@ -49,7 +49,7 @@ You will need to [set your password](https://server1.screepspl.us/authmod/passwo
 
 ### Connection
 
-Host: server2.screepspl.us
+Host: server2.screepspl.us  
 Port: 21025
 
 ### Features
