@@ -252,6 +252,12 @@ RESULTS:
 
 Winner : knights! Wipe occured @ Tick # 942676 6/19/20 2134 UTC
 
+RECAPS:
+
+Screeps Warfare Championship 206: 20,160x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=lhXPIuP9DUE
+
+Screeps Warfare Championship 206: 1,440x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=9E0Rsgos_1k
+
 [SWC206SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200605T21
 [SWC206START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200606T21
 
