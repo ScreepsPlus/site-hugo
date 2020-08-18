@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [SWC 207](#SWC207)     | [Sat, Aug 22 2020, 2100 UTC][SWC207START] | Sat, Sep 5 2020, 2100 UTC |
 | [BotArena 207](#BA207) | [Sat, Jul 18 2020, 2100 UTC][BA207START] | Sat, Aug 01 2020, 2100 UTC |
 | [S+2 RESET](#SPLUS2RESET202007) | [Fri, Jul 03 2020, 1600 UTC][SPLUS2RESET202007START] | |
 | [SWC 206](#SWC206)     | [Sat, Jun 06 2020, 2100 UTC][SWC206START] | Sat, Jun 20 2020, 2100 UTC |
@@ -82,7 +83,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 ### Rounds:
 
 <a name="BA207"></a>
-#### [Botarena](#Botarena) 207 - ffa, ? sector, ? players
+#### [Botarena](#Botarena) 207 - ffa, 2 sectors, 12 players
 
 * sign up in #botarena in screeps slack server
 
@@ -104,11 +105,11 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : 
+1st place : Tigga
 
-2nd place : 
+2nd place : QzarSTB
 
-3rd place : 
+3rd place : Geir1983
 
 [BA207SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200717T21  
 [BA207START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+205&iso=20200718T21
@@ -221,6 +222,29 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+
+<a name="SWC207"></a>
+#### [SWC](#SWC) 207 - ffa , ? sector(s)
+
+* sign up in #swc in screeps slack server
+
+* spawn in will be allowed starting : [Fri, Aug 21 2020, 2100 UTC][SWC207SPAWN]
+
+* tick start and official round start : [Sat, Aug 22 2020, 2100 UTC][SWC207START]
+
+* free for all combat (no teams)(alliances of opportunity are allowed)
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory placement will be based on player's total room's (with spawns) rcl value
+
+* at random intervals random NPCs will be added to the map as extra aggressors
+
+RESULTS:
+
+[SWC207SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200821T21
+[SWC207START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200822T21
+
 <a name="SWC206"></a>
 #### [SWC](#SWC) 206 - KiLL_tHe_dRag0n! , 3 sectors
 
