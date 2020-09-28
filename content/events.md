@@ -13,6 +13,8 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [S+2 RESET](#SPLUS2RESET202010) | [Sun, Oct 04 2020, 2100 UTC][SPLUS2RESET202010START] | |
+| [BotArena 208](#BA208) | [Wed, Sep 30 2020, 2100 UTC][BA208START] | Wed, Oct 14 2020, 2100 UTC |
 | [SWC 207](#SWC207)     | [Sat, Aug 22 2020, 2100 UTC][SWC207START] | Sat, Sep 5 2020, 2100 UTC |
 | [BotArena 207](#BA207) | [Sat, Jul 18 2020, 2100 UTC][BA207START] | Sat, Aug 01 2020, 2100 UTC |
 | [S+2 RESET](#SPLUS2RESET202007) | [Fri, Jul 03 2020, 1600 UTC][SPLUS2RESET202007START] | |
@@ -39,6 +41,21 @@ td, th {
 ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you love with the added benefit of being reset approximately every 3 months.
 
 ### Resets:
+<a name="SPLUS2RESET202010"></a>
+#### 2020 - 10
+
+* wipe and rebuild will commence : Sat, Oct 03 2020, ~1300UTC
+
+* spawn in will be allowed starting : Sat, Oct 03 2020, 2100UTC
+
+* tick start : [Sun, Oct 04 2020, 2100UTC][SPLUS2RESET202010START]
+
+* map will be 4x4 (16) sectors but only the middle 4 sectors will initially be open
+
+* 2 border sectors will be opened each week as respawn zones (and sometimes novice zones) that will last for 7 days until all sectors are open
+
+[SPLUS2RESET202010START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2020+10&iso=20201004T21
+
 <a name="SPLUS2RESET202007"></a>
 #### 2020 - 07
 
@@ -81,6 +98,36 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+
+<a name="BA208"></a>
+#### [Botarena](#Botarena) 208 - ffa, 2 sectors
+
+* sign up in #botarena in screeps slack server
+
+* spawn in will be allowed starting : [Tue, Sep 29 2020, 2100UTC][BA208SPAWN]
+
+* tick start and official round start : [Wed, Sep 30 2020, 2100UTC][BA208START]
+
+* round end : Wed, Oct 14 2020, 2100 UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using new automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's, with at least one spawn, rcl value
+
+RESULTS:
+
+1st place : 
+
+2nd place : 
+
+3rd place : 
+
+[BA208SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+208&iso=20200929T21  
+[BA208START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+208&iso=20200930T21
 
 <a name="BA207"></a>
 #### [Botarena](#Botarena) 207 - ffa, 2 sectors, 12 players
@@ -224,7 +271,7 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 ### Rounds:
 
 <a name="SWC207"></a>
-#### [SWC](#SWC) 207 - ffa , ? sector(s)
+#### [SWC](#SWC) 207 - ffa , 1 sector
 
 * sign up in #swc in screeps slack server
 
@@ -241,6 +288,12 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * at random intervals random NPCs will be added to the map as extra aggressors
 
 RESULTS:
+
+1st place : QzarSTB
+
+2nd place : Tigga
+
+3rd place : Snowgoose
 
 [SWC207SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200821T21
 [SWC207START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200822T21
