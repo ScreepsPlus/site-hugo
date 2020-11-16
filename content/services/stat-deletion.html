@@ -93,10 +93,8 @@ menu:
         try {
           await this.callRemove('path.that.should.not.exist')
         } catch (e) {
-          if (e.message === 'Unauthorized') {
-            location.href = '/login?backTo=/services/stats-deletion'
-            return
-          }
+          location.href = '/login?backTo=/services/stats-deletion'
+          return
         }
       },
       async remove () {
@@ -110,7 +108,7 @@ menu:
         }
       },
       async callRemove(path) {
-        const { data: { ok, error } } = await http.post('/stats/remove', { path })
+        const { data: { ok, error } } = await http.post('/stats/remove', { path }, { validateStatus: null })
         if (!ok) throw new Error(error)
       }
     }
