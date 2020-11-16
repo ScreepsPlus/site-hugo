@@ -101,7 +101,7 @@ menu:
         this.message = ''
         this.error = ''
         try {
-          await callRemove(this.path)
+          await this.callRemove(this.path)
           this.message = `Stats removed for '${this.path}'`
         } catch (e) {
           this.error = e.message
