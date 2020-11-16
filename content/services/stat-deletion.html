@@ -1,0 +1,118 @@
+---
+title: "Stat Deletion"
+date: 2018-12-04T10:19:17-06:00
+description: Stat Deletion
+menu:
+main:
+pre: "<i class='fa fa-user-o fa-fw'></i>"
+identifier: stat-deletion
+weight: 10
+parent: Services
+---
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.3.12/vuetify.min.css" />
+<div id="StatDeletion">
+  <v-app>
+    <v-content>
+      <v-container fluid>
+        <v-layout wrap>
+          <v-flex xs12>
+            <v-alert type="info" :value="true">This removes your stats. Permanently. You have been warned.</v-alert>
+            <v-card v-if="configs.length">
+              <v-card-text>
+                <v-form>
+                  <v-text-field v-model="path"
+                    hint="shard1.cpu.limit" label="Path to remove (blank for all)"></v-text-field>
+                </v-form>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn flat @click.prevent="remove()" class="primary">Remove</v-btn>
+              </v-card-actions>
+              <v-alert v-if="error" type="error" :value="true">{{ error }}</v-alert>
+              <v-alert v-if="message" type="info" :value="true">{{ message }}</v-alert>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-content>
+    </v-container>
+  </v-app>
+</div>
+<style>
+  .form-group {
+    display: flex;
+    max-width: 350px;
+  }
+
+  .form-label,
+  .form-control {
+    flex: 1;
+  }
+
+  #graphs {
+    width: 100%;
+    height: 400px;
+  }
+
+  /*
+  .edit-agent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .edit-agent__label {
+    flex: 100px;
+  }
+  .edit-agent > * {
+    flex: 1;
+  }
+  */
+</style>
+<script>
+
+  const http = axios.create({
+    baseURL: '/api'
+  })
+  const vue = new Vue({
+    el: '#StatDeletion',
+    data() {
+      return {
+        path: '',
+        error: '',
+        message: ''
+      }
+    },
+    created() {
+      this.ping()
+    },
+    methods: {
+      async ping () {
+        try {
+          await this.callRemove('path.that.should.not.exist')
+        } catch (e) {
+          if (e.message === 'Unauthorized') {
+            location.href = '/login?backTo=/services/stats-deletion'
+            return
+          }
+        }
+      },
+      async remove () {
+        this.message = ''
+        this.error = ''
+        try {
+          await callRemove(this.path)
+          this.message = `Stats removed for '${this.path}'`
+        } catch (e) {
+          this.error = e.message
+        }
+      },
+      async callRemove(path) {
+        const { data: { ok, error } = await http.post('/stats/remove', { path }) }
+        if (!ok) throw new Error(error)
+      }
+    }
+  })
+</script>
