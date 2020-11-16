@@ -3,11 +3,11 @@ title: "Stat Deletion"
 date: 2018-12-04T10:19:17-06:00
 description: Stat Deletion
 menu:
-main:
-pre: "<i class='fa fa-user-o fa-fw'></i>"
-identifier: stat-deletion
-weight: 10
-parent: Services
+  main:
+    pre: "<i class='fa fa-user-o fa-fw'></i>"
+    identifier: stat-deletion
+    weight: 10
+    parent: Services
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -110,7 +110,7 @@ parent: Services
         }
       },
       async callRemove(path) {
-        const { data: { ok, error } = await http.post('/stats/remove', { path }) }
+        const { data: { ok, error } } = await http.post('/stats/remove', { path })
         if (!ok) throw new Error(error)
       }
     }
