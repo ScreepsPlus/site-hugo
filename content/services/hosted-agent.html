@@ -70,19 +70,20 @@ menu:
                     v-model="editConfig.screepsAPIConfig.token"
                     hint="Visit your account on screeps.com to get your token"
                     label="Screeps Token"></v-text-field>
-                  <v-switch 
+                  <v-select
                     v-if="!editConfig.screepsAPIConfig.privateServer"
                     v-model="editConfig.screepsAPIConfig.path"
-                    false-value="/"
-                    true-value="/ptr"
-                    label="PTR"></v-switch>
+                    :items="mmoTypes"
+                    item-text="label"
+                    item-value="value"
+                    label="World"></v-select>
                   <v-select
+                    v-if="editConfig.screepsAPIConfig.privateServer"
+                    v-model="editConfig.screepsAPIConfig.preset"
                     :items="presets"
                     item-text="label"
                     item-value="id"
-                    label="Preset"
-                    v-model="editConfig.screepsAPIConfig.preset"
-                    v-if="editConfig.screepsAPIConfig.privateServer"></v-select>
+                    label="Preset"></v-select>
                   <div v-if="editConfig.screepsAPIConfig.privateServer && editConfig.screepsAPIConfig.preset !== 'custom'">
                     <a :href="authmodURL(editConfig.screepsAPIConfig.preset)" target="_blank">Authmod Link</a>
                   </div>
@@ -190,6 +191,11 @@ const vue = new Vue({
       configs: [],
       editConfig: null,
       testResults: null,
+      mmoTypes: [
+        { label: 'Persistent', value: '/' },
+        { label: 'PTR', value: '/ptr' },
+        { label: 'Season', value: '/season' }
+      ],
       methods: [
         { label: 'Memory', value: 'memory' },
         { label: 'Console', value: 'console' }
@@ -213,10 +219,12 @@ const vue = new Vue({
       const DAY = 24 * HOUR
       const MEMORY_LIMIT = 1440
       const SEGMENT_LIMIT = 360
-      const memoryCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path != '/ptr' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
-      const segmentCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path != '/ptr' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
+      const memoryCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
+      const segmentCalls = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
       const memoryCallsPTR = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/ptr' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
       const segmentCallsPTR = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/ptr' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
+      const memoryCallsSeason = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/season' && c.method === 'memory' && !c.methodConfig.useSegment).reduce((l, v) => (DAY / v.methodConfig.interval) + l, 0)
+      const segmentCallsSeason = this.configs.filter(c => !c.screepsAPIConfig.privateServer && c.screepsAPIConfig.path === '/season' && c.method === 'memory' && c.methodConfig.useSegment).reduce((l, v) => (HOUR / v.methodConfig.interval) + l, 0)
       if (memoryCalls > MEMORY_LIMIT) {
         limits.push(`Memory rate limit exceeded! ${memoryCalls}/day (Limit: ${MEMORY_LIMIT}/day)`)
       }
@@ -228,6 +236,12 @@ const vue = new Vue({
       }
       if (segmentCallsPTR > SEGMENT_LIMIT) {
         limits.push(`PTR Segment rate limit exceeded! ${segmentCallsPTR}/hour (Limit: ${SEGMENT_LIMIT}/hour)`)
+      }
+      if (memoryCallsSeason > MEMORY_LIMIT) {
+        limits.push(`Season Memory rate limit exceeded! ${memoryCallsSeason}/day (Limit: ${MEMORY_LIMIT}/day)`)
+      }
+      if (segmentCallsSeason > SEGMENT_LIMIT) {
+        limits.push(`Season Segment rate limit exceeded! ${segmentCallsSeason}/hour (Limit: ${SEGMENT_LIMIT}/hour)`)
       }
       return limits
     }
