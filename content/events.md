@@ -287,6 +287,12 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * at random intervals random NPCs will be added to the map as extra aggressors
 
+RECAPS:
+
+Screeps Warfare Championship 207: 20,160x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=2EfpoTLfV2Y
+
+Screeps Warfare Championship 207: 1,440x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=Umtg2I9Ds34
+
 RESULTS:
 
 1st place : QzarSTB
