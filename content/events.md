@@ -13,6 +13,8 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  24 2021, 2100 UTC][SPLUS1RESET202101START] | |
+| [S+2 RESET](#SPLUS2RESET202101) | [Sun, Jan  17 2021, 2100 UTC][SPLUS2RESET202101START] | |
 | [S+2 RESET](#SPLUS2RESET202010) | [Sun, Oct 04 2020, 2100 UTC][SPLUS2RESET202010START] | |
 | [BotArena 208](#BA208) | [Wed, Sep 30 2020, 2100 UTC][BA208START] | Wed, Oct 14 2020, 2100 UTC |
 | [SWC 207](#SWC207)     | [Sat, Aug 22 2020, 2100 UTC][SWC207START] | Sat, Sep 5 2020, 2100 UTC |
@@ -36,11 +38,50 @@ td, th {
 }
 </style>
 
+<a name="SPLUS1"></a>
+## ScreepsPlus Standard
+ScreepsPlus Standard is the original ScreepsPlus private server that runs for up to a year at a time.
+
+### Resets:
+
+<a name="SPLUS1RESET202101"></a>
+#### 2021 - 01
+
+* wipe and rebuild will commence : Sat, Jan 23 2021, ~1300UTC
+
+* spawn in will be allowed starting : Sat, Jan 23 2021, 2100UTC
+
+* tick start : [Sun, Jan 24 2021, 2100 UTC][SPLUS1RESET202101START]
+
+* map will be 8x8 (64) sectors. entire map will be open from start. 
+
+* 2 source rooms will be more common per ring of sectors as you move closer to the center of the map. Ratio of distribution TBD.
+
+[SPLUS1RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS1+RESET+TICK+START+2021+01&iso=20210124T21
+
+
 <a name="SPLUS2"></a>
 ## ScreepsPlus Seasonal
 ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you love with the added benefit of being reset approximately every 3 months.
 
 ### Resets:
+
+<a name="SPLUS2RESET202101"></a>
+#### 2021 - 01
+
+* wipe and rebuild will commence : Sat, Jan 16 2021, ~1300UTC
+
+* spawn in will be allowed starting : Sat, Jan 16 2021, 2100UTC
+
+* tick start : [Sun, Jan  17 2021, 2100 UTC][SPLUS2RESET202101START]
+
+* map will be 4x4 (16) sectors. entire map will be open from start. 
+
+* 2 source rooms will be more common in the inner 4 sectors vs the outer 12 sectors. (7:3)
+
+[SPLUS2RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+01&iso=20210117T21
+
+
 <a name="SPLUS2RESET202010"></a>
 #### 2020 - 10
 
@@ -120,11 +161,11 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : 
+1st place : Geir1983
 
-2nd place : 
+2nd place : QzarSTB
 
-3rd place : 
+3rd place : Saruss
 
 [BA208SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+208&iso=20200929T21  
 [BA208START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+208&iso=20200930T21
@@ -287,12 +328,6 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * at random intervals random NPCs will be added to the map as extra aggressors
 
-RECAPS:
-
-Screeps Warfare Championship 207: 20,160x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=2EfpoTLfV2Y
-
-Screeps Warfare Championship 207: 1,440x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=Umtg2I9Ds34
-
 RESULTS:
 
 1st place : QzarSTB
@@ -300,6 +335,12 @@ RESULTS:
 2nd place : Tigga
 
 3rd place : Snowgoose
+
+RECAPS:
+
+Screeps Warfare Championship 207: 20,160x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=2EfpoTLfV2Y
+
+Screeps Warfare Championship 207: 1,440x Map Time-lapse (courtesy of joethebarber): https://www.youtube.com/watch?v=Umtg2I9Ds34
 
 [SWC207SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200821T21
 [SWC207START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+206&iso=20200822T21
