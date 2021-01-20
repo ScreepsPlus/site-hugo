@@ -13,8 +13,9 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  24 2021, 2100 UTC][SPLUS1RESET202101START] | |
-| [S+2 RESET](#SPLUS2RESET202101) | [Sun, Jan  17 2021, 2100 UTC][SPLUS2RESET202101START] | |
+| [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  31 2021, 2100 UTC][SPLUS1RESET202101START] | |
+| [S+2 RESET](#SPLUS2RESET202101) | [Sun, Jan  24 2021, 2100 UTC][SPLUS2RESET202101START] | |
+| [SWC 208](#SWC208)     | [Sat, Jan 23 2021, 2100 UTC][SWC208START] | Sat, Feb 6 2021, 2100 UTC |
 | [S+2 RESET](#SPLUS2RESET202010) | [Sun, Oct 04 2020, 2100 UTC][SPLUS2RESET202010START] | |
 | [BotArena 208](#BA208) | [Wed, Sep 30 2020, 2100 UTC][BA208START] | Wed, Oct 14 2020, 2100 UTC |
 | [SWC 207](#SWC207)     | [Sat, Aug 22 2020, 2100 UTC][SWC207START] | Sat, Sep 5 2020, 2100 UTC |
@@ -47,17 +48,17 @@ ScreepsPlus Standard is the original ScreepsPlus private server that runs for up
 <a name="SPLUS1RESET202101"></a>
 #### 2021 - 01
 
-* wipe and rebuild will commence : Sat, Jan 23 2021, ~1300UTC
+* wipe and rebuild will commence : Sat, Jan 30 2021, ~1300UTC
 
-* spawn in will be allowed starting : Sat, Jan 23 2021, 2100UTC
+* spawn in will be allowed starting : Sat, Jan 30 2021, 2100UTC
 
-* tick start : [Sun, Jan 24 2021, 2100 UTC][SPLUS1RESET202101START]
+* tick start : [Sun, Jan 31 2021, 2100 UTC][SPLUS1RESET202101START]
 
 * map will be 8x8 (64) sectors. entire map will be open from start. 
 
 * 2 source rooms will be more common per ring of sectors as you move closer to the center of the map. Ratio of distribution TBD.
 
-[SPLUS1RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS1+RESET+TICK+START+2021+01&iso=20210124T21
+[SPLUS1RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS1+RESET+TICK+START+2021+01&iso=20210131T21
 
 
 <a name="SPLUS2"></a>
@@ -69,17 +70,17 @@ ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you l
 <a name="SPLUS2RESET202101"></a>
 #### 2021 - 01
 
-* wipe and rebuild will commence : Sat, Jan 16 2021, ~1300UTC
+* wipe and rebuild will commence : Sat, Jan 23 2021, ~1300UTC
 
-* spawn in will be allowed starting : Sat, Jan 16 2021, 2100UTC
+* spawn in will be allowed starting : Sat, Jan 23 2021, 2130UTC
 
-* tick start : [Sun, Jan  17 2021, 2100 UTC][SPLUS2RESET202101START]
+* tick start : [Sun, Jan  24 2021, 2100 UTC][SPLUS2RESET202101START]
 
 * map will be 4x4 (16) sectors. entire map will be open from start. 
 
 * 2 source rooms will be more common in the inner 4 sectors vs the outer 12 sectors. (7:3)
 
-[SPLUS2RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+01&iso=20210117T21
+[SPLUS2RESET202101START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+01&iso=20210124T21
 
 
 <a name="SPLUS2RESET202010"></a>
@@ -310,6 +311,32 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+
+<a name="SWC208"></a>
+#### [SWC](#SWC) 208 - 2 team deathmatch , ? sector(s)
+
+* sign up in #swc in screeps slack server
+
+* spawn in will be allowed starting : [Fri, Jan 22 2021, 2100 UTC][SWC208SPAWN]
+
+* tick start and official round start : [Sat, Jan 23 2021, 2100 UTC][SWC208START]
+
+* 2 teams assigned based on secret weighting
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory placement will be based on team's player's total room's (with spawns) rcl value
+
+RESULTS:
+
+1st place : 
+
+2nd place : 
+
+3rd place : 
+
+[SWC208SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+208&iso=20210122T21
+[SWC208START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+208&iso=20210123T21
 
 <a name="SWC207"></a>
 #### [SWC](#SWC) 207 - ffa , 1 sector
