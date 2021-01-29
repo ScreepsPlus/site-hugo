@@ -302,10 +302,11 @@ const vue = new Vue({
     cleanConfig(config) {
       const preset = config.screepsAPIConfig.preset
       if (config.screepsAPIConfig.privateServer) {
+        config.screepsAPIConfig.path = '/'
         if (preset !== 'custom') {
-          const { hostname, port, protocol } = this.presets.find(p => p.id == preset) || {}
+          const { hostname, port, protocol, path = '/' } = this.presets.find(p => p.id == preset) || {}
           if (hostname) {
-            Object.assign(config.screepsAPIConfig, { hostname: hostname.replace(/[^a-z0-9._-]/i, ''), port, protocol })
+            Object.assign(config.screepsAPIConfig, { hostname: hostname.replace(/[^a-z0-9._-]/i, ''), port, protocol, path })
           }
         }
       } else {
