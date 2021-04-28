@@ -13,6 +13,9 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [SWC 209](#SWC209)     | ??? | ??? |
+| [S+2 RESET](#SPLUS2RESET202105) | [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START] | |
+| [BotArena 209](#BA209) | [Sat, Feb 20 2021, 2100 UTC][BA209START] | Sat, Mar 6 2021, 2100 UTC |
 | [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  31 2021, 2100 UTC][SPLUS1RESET202101START] | |
 | [S+2 RESET](#SPLUS2RESET202101) | [Mon, Jan  25 2021, 2100 UTC][SPLUS2RESET202101START] | |
 | [SWC 208](#SWC208)     | [Sat, Jan 23 2021, 2100 UTC][SWC208START] | Sat, Feb 6 2021, 2100 UTC |
@@ -66,6 +69,24 @@ ScreepsPlus Standard is the original ScreepsPlus private server that runs for up
 ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you love with the added benefit of being reset approximately every 3 months.
 
 ### Resets:
+
+<a name="SPLUS2RESET202105"></a>
+#### 2021 - 05
+
+* wipe and rebuild will commence : Sat, May 1 2021, ~1300UTC
+
+* spawn in will be allowed starting : Sat, May 1 2021, 2100UTC
+
+* tick start : [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START]
+
+* map will be 4x4 (16) sectors. entire map will be open from start. 
+
+* every room will be a two source room.
+
+* season will be shortened and will only last 2 months (May - June).
+
+[SPLUS2RESET202105START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+05&iso=20210502T21
+
 
 <a name="SPLUS2RESET202101"></a>
 #### 2021 - 01
@@ -140,6 +161,36 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+
+<a name="BA209"></a>
+#### [Botarena](#Botarena) 209 - ffa, 2 sectors
+
+* sign up in #botarena in screeps slack server
+
+* spawn in will be allowed starting : [Fri, Feb 19 2021, 2100UTC][BA209SPAWN]
+
+* tick start and official round start : [Sat, Feb 20 2021, 2100UTC][BA209START]
+
+* round end : Sat, Mar 6 2021, 2100 UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using new automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's, with at least one spawn, rcl value
+
+RESULTS:
+
+1st place : Tigga
+
+2nd place : ???
+
+3rd place : ???
+
+[BA209SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210219T21  
+[BA209START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210220T21
 
 <a name="BA208"></a>
 #### [Botarena](#Botarena) 208 - ffa, 2 sectors
@@ -312,8 +363,36 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 ### Rounds:
 
+<a name="SWC209"></a>
+#### [SWC](#SWC) 209 - 2 team deathmatch , ? sector(s)
+
+* sign up in #swc in screeps slack server
+
+* spawn in will be allowed starting : ???
+
+* tick start and official round start : ???
+
+* 2 teams assigned based on secret weighting
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory placement will be based on team's player's total room's (with spawns) rcl value
+
+* team 1 : ???
+
+* team 2 : ???
+
+RESULTS:
+
+1st place : ???
+
+2nd place : ???
+
+[SWC209SPAWN]: https://localhost
+[SWC209START]: https://localhost
+
 <a name="SWC208"></a>
-#### [SWC](#SWC) 208 - 2 team deathmatch , ? sector(s)
+#### [SWC](#SWC) 208 - 2 team deathmatch , 3 sector(s)
 
 * sign up in #swc in screeps slack server
 
@@ -327,13 +406,15 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * victory placement will be based on team's player's total room's (with spawns) rcl value
 
+* team 1 : Gadjung, Modus, Robalian, Saruss, Snowgoose
+
+* team 2 : eiskalt, QzarSTB, Reggae Muffin, Shibdib, SneakyPolarBear
+
 RESULTS:
 
-1st place : 
+1st place : team 2
 
-2nd place : 
-
-3rd place : 
+2nd place : team 1
 
 [SWC208SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+208&iso=20210122T21
 [SWC208START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+208&iso=20210123T21
