@@ -13,7 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [SWC 209](#SWC209)     | ??? | ??? |
+| [SWC 209](#SWC209)     | [Sun, May 16 2021, 2100UTC][SWC209START] | Sun, May 30 2021, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202105) | [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START] | |
 | [BotArena 209](#BA209) | [Sat, Feb 20 2021, 2100 UTC][BA209START] | Sat, Mar 6 2021, 2100 UTC |
 | [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  31 2021, 2100 UTC][SPLUS1RESET202101START] | |
@@ -84,6 +84,8 @@ ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you l
 * every room will be a two source room.
 
 * season will be shortened and will only last 2 months (May - June).
+
+* the following Game constants have been changed from default: { GCL_MULTIPLY: 100000, UPGRADE_CONTROLLER_POWER: 10 }
 
 [SPLUS2RESET202105START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+05&iso=20210502T21
 
@@ -368,9 +370,9 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * sign up in #swc in screeps slack server
 
-* spawn in will be allowed starting : ???
+* spawn in will be allowed starting : [Sat, May 15 2021, 2100UTC][SWC209SPAWN]
 
-* tick start and official round start : ???
+* tick start and official round start : [Sun, May 16 2021, 2100UTC][SWC209START]
 
 * 2 teams assigned based on secret weighting
 
@@ -388,8 +390,8 @@ RESULTS:
 
 2nd place : ???
 
-[SWC209SPAWN]: https://localhost
-[SWC209START]: https://localhost
+[SWC209SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+209&iso=20210515T21
+[SWC209START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+209&iso=20210516T21
 
 <a name="SWC208"></a>
 #### [SWC](#SWC) 208 - 2 team deathmatch , 3 sector(s)
