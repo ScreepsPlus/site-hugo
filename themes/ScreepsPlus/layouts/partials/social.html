@@ -195,6 +195,11 @@
       <a href="https://screeps.slack.com/messages/{{ . }}" target="_blank" rel="noreferrer"><i class="fa fa-slack fa-fw"></i>Slack</a>
     </li>
     {{ end }}
+    {{ with .Site.Social.discord }}
+    <li class="menu-item">
+      <a href="https://discord.gg/{{ . }}" target="_blank" rel="noreferrer"><i class="fa fa-discord fa-fw"></i>Discord</a>
+    </li>
+    {{ end }}
     {{ with .Site.Social.patreon }}
     <li class="menu-item" style="text-align: center">
         <a href="https://www.patreon.com/{{ . }}"><img src="/become_a_patron_button.png" alt="Patreon Logo"></a>
