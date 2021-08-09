@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [BotArena 210](#BA210) | [Sat, Aug 28 2021, 2100 UTC][BA210START] | Sat, Sep 11 2021, 2100 UTC |
 | [SWC 209](#SWC209)     | [Sun, May 16 2021, 2100UTC][SWC209START] | Sun, May 30 2021, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202105) | [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START] | |
 | [BotArena 209](#BA209) | [Sat, Feb 20 2021, 2100 UTC][BA209START] | Sat, Mar 6 2021, 2100 UTC |
@@ -82,8 +83,6 @@ ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you l
 * map will be 4x4 (16) sectors. entire map will be open from start. 
 
 * every room will be a two source room.
-
-* season will be shortened and will only last 2 months (May - June).
 
 * the following Game constants have been changed from default: { GCL_MULTIPLY: 100000, UPGRADE_CONTROLLER_POWER: 10 }
 
@@ -163,6 +162,36 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+
+<a name="BA210"></a>
+#### [Botarena](#Botarena) 210 - ffa, 2 sectors
+
+* sign up in #botarena in screeps discord server. signups will be pinned in the channel.
+
+* spawn in will be allowed starting : [Fri, Aug 27 2021, 2100UTC][BA210SPAWN]
+
+* tick start and official round start : [Sat, Aug 28 2021, 2100UTC][BA210START]
+
+* round end : Sat, Sep 11 2021, 2100 UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's rcl value. room's must have at least one spawn to be counted.
+
+RESULTS:
+
+1st place : ???
+
+2nd place : ???
+
+3rd place : ???
+
+[BA210SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210827T21  
+[BA210START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210828T21
 
 <a name="BA209"></a>
 #### [Botarena](#Botarena) 209 - ffa, 2 sectors
@@ -366,7 +395,7 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 ### Rounds:
 
 <a name="SWC209"></a>
-#### [SWC](#SWC) 209 - 2 team deathmatch , ? sector(s)
+#### [SWC](#SWC) 209 - 2 team deathmatch , 3 sector(s)
 
 * sign up in #swc in screeps slack server
 
@@ -380,15 +409,15 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 * victory placement will be based on team's player's total room's (with spawns) rcl value
 
-* team 1 : ???
+* team Epsilon : BarryOSeven, Saruss, Sergey, QzarSTB
 
-* team 2 : ???
+* team Gamma : Robalian, Shibdib, slowmotionghost, Yoner, Modus
 
 RESULTS:
 
-1st place : ???
+1st place : team Gamma - Robalian, Shibdib, slowmotionghost, Yoner, Modus
 
-2nd place : ???
+2nd place : team Epsilon - BarryOSeven, Saruss, Sergey, QzarSTB
 
 [SWC209SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+209&iso=20210515T21
 [SWC209START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+209&iso=20210516T21
