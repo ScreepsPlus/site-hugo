@@ -13,12 +13,13 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [S+2 RESET](#SPLUS2RESET202109) | [Sun, Sep 26 2021, 2100 UTC][SPLUS2RESET202109START] | |
 | [BotArena 210](#BA210) | [Sat, Aug 28 2021, 2100 UTC][BA210START] | Sat, Sep 11 2021, 2100 UTC |
 | [SWC 209](#SWC209)     | [Sun, May 16 2021, 2100UTC][SWC209START] | Sun, May 30 2021, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202105) | [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START] | |
 | [BotArena 209](#BA209) | [Sat, Feb 20 2021, 2100 UTC][BA209START] | Sat, Mar 6 2021, 2100 UTC |
-| [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan  31 2021, 2100 UTC][SPLUS1RESET202101START] | |
-| [S+2 RESET](#SPLUS2RESET202101) | [Mon, Jan  25 2021, 2100 UTC][SPLUS2RESET202101START] | |
+| [S+1 RESET](#SPLUS1RESET202101) | [Sun, Jan 31 2021, 2100 UTC][SPLUS1RESET202101START] | |
+| [S+2 RESET](#SPLUS2RESET202101) | [Mon, Jan 25 2021, 2100 UTC][SPLUS2RESET202101START] | |
 | [SWC 208](#SWC208)     | [Sat, Jan 23 2021, 2100 UTC][SWC208START] | Sat, Feb 6 2021, 2100 UTC |
 | [S+2 RESET](#SPLUS2RESET202010) | [Sun, Oct 04 2020, 2100 UTC][SPLUS2RESET202010START] | |
 | [BotArena 208](#BA208) | [Wed, Sep 30 2020, 2100 UTC][BA208START] | Wed, Oct 14 2020, 2100 UTC |
@@ -70,6 +71,20 @@ ScreepsPlus Standard is the original ScreepsPlus private server that runs for up
 ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you love with the added benefit of being reset approximately every 3 months.
 
 ### Resets:
+
+<a name="SPLUS2RESET202109"></a>
+#### 2021 - 09
+
+* wipe and rebuild will commence : Sat, Sep 25 2021, ~1300UTC
+
+* spawn in will be allowed starting : Sat, Sep 25 2021, 2100UTC
+
+* tick start : [Sun, Sep 26 2021, 2100 UTC][SPLUS2RESET202109START]
+
+* map will be 4x4 (16) sectors. entire map will be open from start. 
+
+[SPLUS2RESET202109START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+09&iso=20210926T21
+
 
 <a name="SPLUS2RESET202105"></a>
 #### 2021 - 05
@@ -184,11 +199,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : ???
-
-2nd place : ???
-
-3rd place : ???
+1st place : Tigga (complete wipe)
 
 [BA210SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210827T21  
 [BA210START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+209&iso=20210828T21
