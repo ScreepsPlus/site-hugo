@@ -13,7 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
-| [S+2 RESET](#SPLUS2RESET202109) | [Sun, Sep 26 2021, 2100 UTC][SPLUS2RESET202109START] | |
+| [S+2 RESET](#SPLUS2RESET202110) | [Sun, Oct 03 2021, 2100 UTC][SPLUS2RESET202110START] | |
 | [BotArena 210](#BA210) | [Sat, Aug 28 2021, 2100 UTC][BA210START] | Sat, Sep 11 2021, 2100 UTC |
 | [SWC 209](#SWC209)     | [Sun, May 16 2021, 2100UTC][SWC209START] | Sun, May 30 2021, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202105) | [Sun, May 2 2021, 2100 UTC][SPLUS2RESET202105START] | |
@@ -72,18 +72,18 @@ ScreepsPlus Seasonal is the same ScreepsPlus private server mods and rules you l
 
 ### Resets:
 
-<a name="SPLUS2RESET202109"></a>
-#### 2021 - 09
+<a name="SPLUS2RESET202110"></a>
+#### 2021 - 10
 
-* wipe and rebuild will commence : Sat, Sep 25 2021, ~1300UTC
+* wipe and rebuild will commence : Sat, Oct 02 2021, ~1300UTC
 
-* spawn in will be allowed starting : Sat, Sep 25 2021, 2100UTC
+* spawn in will be allowed starting : Sat, Oct 02 2021, 2100UTC
 
-* tick start : [Sun, Sep 26 2021, 2100 UTC][SPLUS2RESET202109START]
+* tick start : [Sun, Oct 03 2021, 2100 UTC][SPLUS2RESET202110START]
 
 * map will be 4x4 (16) sectors. entire map will be open from start. 
 
-[SPLUS2RESET202109START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+09&iso=20210926T21
+[SPLUS2RESET202110START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SPLUS2+RESET+TICK+START+2021+10&iso=20211003T21
 
 
 <a name="SPLUS2RESET202105"></a>
