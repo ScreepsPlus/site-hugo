@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [SWC 210](#SWC210)     | [Sun, Dec 19 2021, 2100UTC][SWC210START] | Sun, Jan 2 2022, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202110) | [Sun, Oct 03 2021, 2100 UTC][SPLUS2RESET202110START] | |
 | [BotArena 210](#BA210) | [Sat, Aug 28 2021, 2100 UTC][BA210START] | Sat, Sep 11 2021, 2100 UTC |
 | [SWC 209](#SWC209)     | [Sun, May 16 2021, 2100UTC][SWC209START] | Sun, May 30 2021, 2100UTC |
@@ -404,6 +405,34 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+
+<a name="SWC210"></a>
+#### [SWC](#SWC) 210 - 2 team deathmatch , 4 sector(s)
+
+* sign up in #swc in screeps slack server
+
+* spawn in will be allowed starting : [Sat, Dec 18 2021, 2100UTC][SWC210SPAWN]
+
+* tick start and official round start : [Sun, Dec 19 2021, 2100UTC][SWC210START]
+
+* 2 teams assigned based on secret weighting
+
+* teams will be assigned a single sector to spawn in
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory placement will be based on team's player's total room's (with spawns) rcl value
+
+* team JackRabbit : Shibdib, MarvinTMB, Saruss, Robalian, Bulletproof, Bycrome, Mirroar
+
+* team Antelope : slowmotionghost, silten, Mitsuyoshi, Qzar, gadjung, Modus, asdpof
+
+RESULTS:
+
+1st place : ???
+
+[SWC210SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+210&iso=20211218T21
+[SWC210START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+210&iso=20211219T21
 
 <a name="SWC209"></a>
 #### [SWC](#SWC) 209 - 2 team deathmatch , 3 sector(s)
