@@ -429,7 +429,8 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 
 RESULTS:
 
-1st place : ???
+JackRabbit - 148
+Antelope - 242
 
 [SWC210SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+210&iso=20211218T21
 [SWC210START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+210&iso=20211219T21
