@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [BotArena 211](#BA211) | [Sat, Jan 22 2022, 2100 UTC][BA211START] | Sat, Feb 5 2022, 2100 UTC |
 | [SWC 210](#SWC210)     | [Sun, Dec 19 2021, 2100UTC][SWC210START] | Sun, Jan 2 2022, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202110) | [Sun, Oct 03 2021, 2100 UTC][SPLUS2RESET202110START] | |
 | [BotArena 210](#BA210) | [Sat, Aug 28 2021, 2100 UTC][BA210START] | Sat, Sep 11 2021, 2100 UTC |
@@ -178,6 +179,32 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * use the initial safemode period to only fix bugs in code and not to guide your bot to victory for use cases in that specific round
 
 ### Rounds:
+
+<a name="BA211"></a>
+#### [Botarena](#Botarena) 211 - ffa, ? sectors
+
+* sign up in #botarena in screeps slack server. signups will be pinned in the channel.
+
+* spawn in will be allowed starting : [Fri, Jan 21 2022, 2100UTC][BA211SPAWN]
+
+* tick start and official round start : [Sat, Jan 22 2022, 2100UTC][BA211START]
+
+* round end : Sat, Feb 5 2022, 2100 UTC
+
+* free for all combat (no teams)(alliances of opportunity are allowed but have to be fully automated)
+
+* CPULimit = Math.min(20 + GCL * 15, 150);
+
+* first spawn can be placed manually or using automated spawn creation system design by ags131, go to #botarena for details
+
+* victory placement will be based on player's total room's rcl value. room's must have at least one spawn to be counted.
+
+RESULTS:
+
+1st place : ???
+
+[BA211SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+211&iso=20220121T21  
+[BA211START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+211&iso=20220122T21
 
 <a name="BA210"></a>
 #### [Botarena](#Botarena) 210 - ffa, 2 sectors
