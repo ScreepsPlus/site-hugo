@@ -181,7 +181,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 ### Rounds:
 
 <a name="BA211"></a>
-#### [Botarena](#Botarena) 211 - ffa, ? sectors
+#### [Botarena](#Botarena) 211 - ffa, 3 sectors
 
 * sign up in #botarena in screeps slack server. signups will be pinned in the channel.
 
@@ -198,6 +198,8 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 * first spawn can be placed manually or using automated spawn creation system design by ags131, go to #botarena for details
 
 * victory placement will be based on player's total room's rcl value. room's must have at least one spawn to be counted.
+
+* participants : qzarstb, robalian, saruss, snowgoose, shibdib, geir1983, tigga, yoner, silten, modus, gadjung, slowmotionghost, marvintmb, bulletproof, captainmuscles, pandamaster, tooangel, sneaky_polar_bear, poot, mitsuyoshi, backbite, mirroar, rayderblitz, stongej
 
 RESULTS:
 
