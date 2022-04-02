@@ -13,6 +13,7 @@ toc: false
 
 | Event                  | Start                     | End                       |
 |:-----------------------|:--------------------------|:--------------------------|
+| [SWC 211](#SWC211)     | [Sun, Apr 10 2022, 2100UTC][SWC211START] | Sun, Apr 24 2022, 2100UTC |
 | [BotArena 211](#BA211) | [Sat, Jan 22 2022, 2100 UTC][BA211START] | Sat, Feb 5 2022, 2100 UTC |
 | [SWC 210](#SWC210)     | [Sun, Dec 19 2021, 2100UTC][SWC210START] | Sun, Jan 2 2022, 2100UTC |
 | [S+2 RESET](#SPLUS2RESET202110) | [Sun, Oct 03 2021, 2100 UTC][SPLUS2RESET202110START] | |
@@ -158,7 +159,7 @@ The BotArena is a regular competition between fully automated Screeps AIs. It is
 
 All players with a fully automated AI are invited to participate.
 
-Rules are subject to change, stay up to date in #botarena in the screeps slack.
+Rules are subject to change, stay up to date in #botarena in the screeps discord.
 
 ### Rules:
 
@@ -183,7 +184,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 <a name="BA211"></a>
 #### [Botarena](#Botarena) 211 - ffa, 3 sectors
 
-* sign up in #botarena in screeps slack server. signups will be pinned in the channel.
+* sign up in #botarena in screeps discord server. signups will be pinned in the channel.
 
 * spawn in will be allowed starting : [Fri, Jan 21 2022, 2100UTC][BA211SPAWN]
 
@@ -203,7 +204,7 @@ Rules are subject to change, stay up to date in #botarena in the screeps slack.
 
 RESULTS:
 
-1st place : ???
+1st place : Tigga
 
 [BA211SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+211&iso=20220121T21  
 [BA211START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=BA+211&iso=20220122T21
@@ -423,7 +424,7 @@ Screeps Warfare Championship is a contest to see who has the best AI in a small 
 
 Players of all skill levels are encouraged to join, SWC is often the best way to learn what works and what doesn’t work with your AI.
 
-Rules are subject to change, stay up to date in #swc in the screeps slack.
+Rules are subject to change, stay up to date in #swc in the screeps discord.
 
 ### Rules:
 
@@ -434,6 +435,34 @@ Rules are subject to change, stay up to date in #swc in the screeps slack.
 * do not use another players Screeps AI unless it is drastically different from the base version with your own modifications (no NCPs)
 
 ### Rounds:
+
+<a name="SWC211"></a>
+#### [SWC](#SWC) 211 - 2 team deathmatch , 3 sector(s)
+
+* sign up in #swc in the screeps discord server
+
+* spawn in will be allowed starting : [Sat, Apr 09 2022, 2100UTC][SWC211SPAWN]
+
+* tick start and official round start : [Sun, Apr 10 2022, 2100UTC][SWC211START]
+
+* 2 teams assigned based on secret weighting
+
+* teams will be assigned a single sector to spawn in
+
+* CPULimit = Math.min(20 + GCL * 10, 300); //MMO default
+
+* victory placement will be based on team's player's total room's (with spawns) rcl value
+
+* team One : slowmotionghost, Dignissi, admon, RayderBlitz, Saruss, Trepidimous
+
+* team Two : Yoner, Mitsuyoshi, Silten, MarvinTMB, asdpof, Modus 
+
+RESULTS:
+
+???
+
+[SWC211SPAWN]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+211&iso=20220409T21
+[SWC211START]: https://www.timeanddate.com/worldclock/fixedtime.html?msg=SWC+210&iso=20220410T21
 
 <a name="SWC210"></a>
 #### [SWC](#SWC) 210 - 2 team deathmatch , 4 sector(s)
