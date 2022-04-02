@@ -37,4 +37,4 @@ With this method you do have to provide a token from MMO or password for a priva
 4. Thats it! Create a dashboard and enjoy :)
 
 #### Advanced
-For more advanced stat collection and custom agents (Such as [NodeJS Agent](https://github.com/screepsplus/node-agent) or [Go Agent](https://github.com/screepsplus/go-agent)), you can PM me (ags131) on [Slack](https://screeps.slack.com/messages/C2FD5CGJV) with your username for a token.
+For more advanced stat collection and custom agents (Such as [NodeJS Agent](https://github.com/screepsplus/node-agent) or [Go Agent](https://github.com/screepsplus/go-agent)), you can PM psy3727 or ask in #screepsplus-support on [Discord](https://discord.com/invite/screeps) with your screepsplus username for a token.
