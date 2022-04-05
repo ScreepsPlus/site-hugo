@@ -453,9 +453,9 @@ Rules are subject to change, stay up to date in #swc in the screeps discord.
 
 * victory placement will be based on team's player's total room's (with spawns) rcl value
 
-* team One : slowmotionghost, Dignissi, admon, RayderBlitz, Saruss, Trepidimous
+* team One : slowmotionghost, Dignissi, admon, RayderBlitz, Saruss, Trepidimous, Eiskalt
 
-* team Two : Yoner, Mitsuyoshi, Silten, MarvinTMB, asdpof, Modus 
+* team Two : Yoner, Mitsuyoshi, Silten, MarvinTMB, asdpof, Modus, Sneaky Polar Bear
 
 RESULTS:
 
