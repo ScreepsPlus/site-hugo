@@ -1,14 +1,6 @@
 <div class="social">
   <ul class="menu-list">
 
-    {{ if .RSSLink }}
-    <li class="menu-item">
-      <a href="{{ .RSSLink }}"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    {{ end }}
-
-    <!-- SNS microblogging -->
-
     {{ with .Site.Social.twitter }}
     <li class="menu-item">
       <a href="https://twitter.com/{{ . }}" target="_blank" rel="noreferrer"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
